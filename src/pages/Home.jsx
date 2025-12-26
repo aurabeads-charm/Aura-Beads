@@ -89,14 +89,14 @@ const Home = () => {
               initial={{ opacity: 0, x: -40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-              className="order-2 lg:order-1 text-center lg:text-left space-y-8 -mt-4 md:mt-0"
+              className="order-2 lg:order-1 text-center lg:text-left space-y-8"
             >
               <div className="space-y-4">
                 <motion.span 
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.3 }}
-                  className="inline-block text-amber-800 uppercase tracking-[0.4em] text-[11px] font-bold drop-shadow-sm"
+                  className="inline-block text-amber-700/80 uppercase tracking-[0.4em] text-[10px] font-semibold"
                 >
                   Handcrafted Elegance
                 </motion.span>
@@ -104,11 +104,10 @@ const Home = () => {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                  className="text-5xl md:text-6xl lg:text-7xl font-serif text-stone-900 leading-[1.1] tracking-tight font-bold drop-shadow-md"
-                  style={{ textShadow: '1px 1px 2px rgba(255,255,255,0.8)' }}
+                  className="text-5xl md:text-6xl lg:text-7xl font-serif text-stone-800 leading-[1.1] tracking-tight"
                 >
                   <span className="block">Timeless</span>
-                  <span className="block italic text-amber-800">Treasures</span>
+                  <span className="block italic text-amber-800/90">Treasures</span>
                 </motion.h1>
               </div>
               
@@ -116,8 +115,7 @@ const Home = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
-                className="text-black md:text-stone-700 text-base md:text-lg font-medium leading-relaxed max-w-md mx-auto lg:mx-0 drop-shadow-sm"
-                style={{ textShadow: '0px 1px 2px rgba(255,255,255,0.9)' }}
+                className="text-stone-500 text-base md:text-lg font-light leading-relaxed max-w-md mx-auto lg:mx-0"
               >
                 Elevate every look with our exquisite jewelry. From delicate chains to statement pieces, each design adds sophistication to your style.
               </motion.p>
