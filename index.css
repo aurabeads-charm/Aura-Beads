@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #FDFBF7;
+  margin: 0;
+}
+
+h1, h2, h3, h4, .font-serif {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.gold-gradient {
+  background: linear-gradient(to right, #D4AF37, #F1D592, #D4AF37);
+}
+
+.soft-shadow {
+  box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FDFBF7;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border-radius: 10px;
+}
