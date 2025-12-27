@@ -107,7 +107,7 @@ const Home = () => {
                   className="text-5xl md:text-6xl lg:text-7xl font-serif text-stone-800 leading-[1.1] tracking-tight"
                 >
                   <span className="block">Timeless</span>
-                  <span className="block italic text-amber-800/90">Treasuressss</span>
+                  <span className="block italic text-amber-800/90">Treasures</span>
                 </motion.h1>
               </div>
               
