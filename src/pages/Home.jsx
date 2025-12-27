@@ -6,11 +6,13 @@ import TestimonialsSection from '../components/ui/TestimonialsSection';
 import { motion, AnimatePresence } from 'motion/react';
 import { useCart } from '../context/CartContext';
 
+const BASE_URL = import.meta.env.BASE_URL || '/';
+
 const HERO_IMAGES = [
-  "/images/hero/hero-1.jpg",
-  "/images/hero/hero-2.jpg",
-  "/images/hero/hero-3.jpg",
-  "/images/hero/hero-4.jpg"
+  `${BASE_URL}images/hero/hero-1.jpg`,
+  `${BASE_URL}images/hero/hero-2.jpg`,
+  `${BASE_URL}images/hero/hero-3.jpg`,
+  `${BASE_URL}images/hero/hero-4.jpg`
 ];
 
 // Custom hook for subtle parallax effect based on scroll
@@ -66,7 +68,7 @@ const Home = () => {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img 
-            src="/images/hero/hero-2.jpg" 
+            src={`${BASE_URL}images/hero/hero-2.jpg`} 
             alt="" 
             className="w-full h-full object-cover"
           />
@@ -96,7 +98,7 @@ const Home = () => {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.3 }}
-                  className="inline-block text-amber-700/80 uppercase tracking-[0.4em] text-[10px] font-semibold"
+                  className="inline-block text-amber-800 md:text-amber-700/80 uppercase tracking-[0.4em] text-[10px] font-bold md:font-semibold drop-shadow-sm"
                 >
                   Handcrafted Elegance
                 </motion.span>
@@ -104,10 +106,10 @@ const Home = () => {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                  className="text-5xl md:text-6xl lg:text-7xl font-serif text-stone-800 leading-[1.1] tracking-tight"
+                  className="text-5xl md:text-6xl lg:text-7xl font-serif text-stone-900 md:text-stone-800 leading-[1.1] tracking-tight drop-shadow-sm"
                 >
                   <span className="block">Timeless</span>
-                  <span className="block italic text-amber-800/90">Treasures</span>
+                  <span className="block italic text-amber-900 md:text-amber-800/90 drop-shadow-sm">Treasures</span>
                 </motion.h1>
               </div>
               
@@ -115,7 +117,7 @@ const Home = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
-                className="text-stone-500 text-base md:text-lg font-light leading-relaxed max-w-md mx-auto lg:mx-0"
+                className="text-stone-700 md:text-stone-500 text-base md:text-lg font-normal md:font-light leading-relaxed max-w-md mx-auto lg:mx-0"
               >
                 Elevate every look with our exquisite jewelry. From delicate chains to statement pieces, each design adds sophistication to your style.
               </motion.p>

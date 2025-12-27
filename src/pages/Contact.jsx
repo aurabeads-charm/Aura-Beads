@@ -74,7 +74,7 @@ const Contact = () => {
           </form>
           
           <div className="mt-8 flex justify-center space-x-6">
-             <a href="#" className="text-neutral-400 hover:text-amber-600 transition-colors">
+             <a href="https://www.instagram.com/aurabeads_.charm" className="text-neutral-400 hover:text-amber-600 transition-colors">
                 <span className="text-xs uppercase tracking-widest font-semibold italic">Instagram</span>
              </a>
              <a href="#" className="text-neutral-400 hover:text-amber-600 transition-colors">

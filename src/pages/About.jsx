@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { CONTACT_INFO } from '../constants';
+import { CONTACT_INFO, getImagePath } from '../constants';
 
 const About = () => {
   const fadeInUp = {
@@ -12,12 +12,12 @@ const About = () => {
   };
 
   const instaPosts = [
-    "/images/products/anti-tarnish-bracelet/1.jpg",
-    "/images/products/korean-earrings/1.jpg",
-    "/images/products/anti-tarnish-necklace/1.jpg",
-    "/images/products/unique-charm-necklace/1.jpg",
-    "/images/products/beads-bracelet/11.jpg",
-    "/images/products/anti-tarnish-rings/1.jpg"
+    getImagePath('images/products/anti-tarnish-bracelet/1.jpg'),
+    getImagePath('images/products/korean-earrings/1.jpg'),
+    getImagePath('images/products/anti-tarnish-necklace/1.jpg'),
+    getImagePath('images/products/unique-charm-necklace/1.jpg'),
+    getImagePath('images/products/beads-bracelet/11.jpg'),
+    getImagePath('images/products/anti-tarnish-rings/1.jpg')
   ];
 
   return (
@@ -32,7 +32,7 @@ const About = () => {
             playsInline
             className="w-full h-full object-cover"
           >
-            <source src="/videos/about-hero.mp4" type="video/mp4" />
+            <source src={getImagePath('videos/about-hero.mp4')} type="video/mp4" />
           </video>
           {/* Light overlay for text readability */}
           <div className="absolute inset-0 bg-[#FDFBF7]/10" />
@@ -120,7 +120,7 @@ const About = () => {
             className="relative h-[50vh] lg:h-auto order-1 lg:order-2"
           >
             <img 
-              src="/images/hero/about-img1.jpg" 
+              src={getImagePath('images/hero/about-img1.jpg')} 
               alt="Artisan crafting jewelry" 
               className="w-full h-full object-cover"
             />
@@ -149,7 +149,7 @@ const About = () => {
       <section className="bg-[#D4C4B5] py-24">
         <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <motion.div {...fadeInUp}><div className="relative aspect-[4/5] md:aspect-auto"><img src="/images/hero/about-img2.jpg" className="rounded-sm shadow-2xl relative z-10 w-full h-full object-cover" alt="Jewelry making" /><div className="absolute -bottom-6 -right-6 w-full h-full border border-amber-200 z-0" /></div></motion.div>
+          <motion.div {...fadeInUp}><div className="relative aspect-[4/5] md:aspect-auto"><img src={getImagePath('images/hero/about-img2.jpg')} className="rounded-sm shadow-2xl relative z-10 w-full h-full object-cover" alt="Jewelry making" /><div className="absolute -bottom-6 -right-6 w-full h-full border border-amber-200 z-0" /></div></motion.div>
           <motion.div {...fadeInUp} className="space-y-8">
             <span className="text-amber-600 uppercase tracking-[0.3em] text-[10px] font-bold">The Beginning</span>
             <h2 className="text-4xl md:text-5xl font-serif text-neutral-800 leading-tight">Born from a Whisper <br /> of Light & Stone</h2>
@@ -179,7 +179,7 @@ const About = () => {
             <div className="w-12 h-px bg-amber-400" />
             <p className="text-neutral-500 font-light leading-relaxed">Our process is intentionally slow. We use premium non-tarnish silver, 24k gold plating, and ethical gemstones.</p>
           </motion.div>
-          <motion.div {...fadeInUp} className="order-1 lg:order-2"><div className="relative aspect-[4/5] md:aspect-auto"><img src="./images/hero/about-img3.jpg" className="rounded-sm shadow-2xl relative z-10 w-full h-full object-cover" alt="Jewelry design" /><div className="absolute -top-6 -left-6 w-full h-full border border-amber-200 z-0" /></div></motion.div>
+          <motion.div {...fadeInUp} className="order-1 lg:order-2"><div className="relative aspect-[4/5] md:aspect-auto"><img src={getImagePath('images/hero/about-img3.jpg')} className="rounded-sm shadow-2xl relative z-10 w-full h-full object-cover" alt="Jewelry design" /><div className="absolute -top-6 -left-6 w-full h-full border border-amber-200 z-0" /></div></motion.div>
         </div>
       </section>
 

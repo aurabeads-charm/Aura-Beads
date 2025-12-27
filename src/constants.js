@@ -1,46 +1,52 @@
+// Base URL for assets - handles Vite's base path configuration
+const BASE_URL = import.meta.env.BASE_URL || '/';
+
+// Helper function to get the correct image path
+export const getImagePath = (path) => `${BASE_URL}${path.startsWith('/') ? path.slice(1) : path}`;
+
 // Product Categories
 export const CATEGORIES = [
   {
     id: 'anti-tarnish-bracelet',
     name: 'Anti Tarnish Bracelet',
     description: 'Premium non-tarnish bracelets that maintain their shine forever',
-    image: '/images/products/anti-tarnish-bracelet/1.jpg'
+    image: getImagePath('images/products/anti-tarnish-bracelet/1.jpg')
   },
   {
     id: 'anti-tarnish-earrings',
     name: 'Anti Tarnish Earrings',
     description: 'Elegant earrings crafted with anti-tarnish materials',
-    image: '/images/products/anti-tarnish-earrings/1.jpg'
+    image: getImagePath('images/products/anti-tarnish-earrings/1.jpg')
   },
   {
     id: 'anti-tarnish-necklace',
     name: 'Anti Tarnish Necklace',
     description: 'Beautiful necklaces that never lose their luster',
-    image: '/images/products/anti-tarnish-necklace/1.jpg'
+    image: getImagePath('images/products/anti-tarnish-necklace/1.jpg')
   },
   {
     id: 'anti-tarnish-rings',
     name: 'Anti Tarnish Rings',
     description: 'Stunning rings made with premium anti-tarnish metals',
-    image: '/images/products/anti-tarnish-rings/1.jpg'
+    image: getImagePath('images/products/anti-tarnish-rings/1.jpg')
   },
   {
     id: 'beads-bracelet',
     name: 'Beads Bracelet',
     description: 'Handcrafted beaded bracelets with unique designs',
-    image: '/images/products/beads-bracelet/11.jpg'
+    image: getImagePath('images/products/beads-bracelet/11.jpg')
   },
   {
     id: 'korean-earrings',
     name: 'Korean Earrings',
     description: 'Trendy Korean-style earrings for a modern look',
-    image: '/images/products/korean-earrings/1.jpg'
+    image: getImagePath('images/products/korean-earrings/1.jpg')
   },
   {
     id: 'unique-charm-necklace',
     name: 'Unique Charm Necklace',
     description: 'One-of-a-kind charm necklaces to express your style',
-    image: '/images/products/unique-charm-necklace/1.jpg'
+    image: getImagePath('images/products/unique-charm-necklace/1.jpg')
   }
 ];
 
@@ -71,7 +77,7 @@ export const antiTarnishBraceletProducts = [
   categoryId: 'anti-tarnish-bracelet',
   description: 'Premium anti-tarnish bracelet that maintains its shine forever.',
   longDescription: 'This exquisite anti-tarnish bracelet is crafted with premium materials that resist oxidation and maintain their beautiful shine for years.',
-  images: [`/images/products/anti-tarnish-bracelet/${p.image}`],
+  images: [getImagePath(`images/products/anti-tarnish-bracelet/${p.image}`)],
   featured: p.id === 'atb-1' || p.id === 'atb-2'
 }));
 
@@ -98,7 +104,7 @@ export const antiTarnishEarringsProducts = [
   categoryId: 'anti-tarnish-earrings',
   description: 'Elegant anti-tarnish earrings that stay beautiful always.',
   longDescription: 'These stunning anti-tarnish earrings are designed to complement any outfit. Made with hypoallergenic materials.',
-  images: [`/images/products/anti-tarnish-earrings/${p.image}`],
+  images: [getImagePath(`images/products/anti-tarnish-earrings/${p.image}`)],
   featured: p.id === 'ate-1' || p.id === 'ate-2'
 }));
 
@@ -133,7 +139,7 @@ export const antiTarnishNecklaceProducts = [
   categoryId: 'anti-tarnish-necklace',
   description: 'Beautiful anti-tarnish necklace that never loses its luster.',
   longDescription: 'This gorgeous anti-tarnish necklace maintains its beautiful shine and resists tarnishing over time.',
-  images: [`/images/products/anti-tarnish-necklace/${p.image}`],
+  images: [getImagePath(`images/products/anti-tarnish-necklace/${p.image}`)],
   featured: p.id === 'atn-1' || p.id === 'atn-2'
 }));
 
@@ -159,7 +165,7 @@ export const antiTarnishRingsProducts = [
   categoryId: 'anti-tarnish-rings',
   description: 'Stunning anti-tarnish ring made with premium metals.',
   longDescription: 'This elegant anti-tarnish ring is crafted with the finest materials to ensure lasting beauty.',
-  images: [`/images/products/anti-tarnish-rings/${p.image}`],
+  images: [getImagePath(`images/products/anti-tarnish-rings/${p.image}`)],
   featured: p.id === 'atr-1' || p.id === 'atr-2'
 }));
 
@@ -237,7 +243,7 @@ export const beadsBraceletProducts = [
   categoryId: 'beads-bracelet',
   description: 'Handcrafted beaded bracelet with unique design.',
   longDescription: 'This beautiful handcrafted beaded bracelet features carefully selected beads strung on a durable elastic cord.',
-  images: [`/images/products/beads-bracelet/${p.image}`],
+  images: [getImagePath(`images/products/beads-bracelet/${p.image}`)],
   featured: p.id === 'bb-1' || p.id === 'bb-2'
 }));
 
@@ -282,7 +288,7 @@ export const koreanEarringsProducts = [
   categoryId: 'korean-earrings',
   description: 'Trendy Korean-style earrings for a modern look.',
   longDescription: 'These trendy Korean-style earrings bring the latest K-fashion to your jewelry collection.',
-  images: [`/images/products/korean-earrings/${p.image}`],
+  images: [getImagePath(`images/products/korean-earrings/${p.image}`)],
   featured: p.id === 'ke-1' || p.id === 'ke-2'
 }));
 
@@ -321,7 +327,7 @@ export const uniqueCharmNecklaceProducts = [
   categoryId: 'unique-charm-necklace',
   description: 'One-of-a-kind charm necklace to express your style.',
   longDescription: 'This unique charm necklace is designed to make a statement with carefully selected charms.',
-  images: [`/images/products/unique-charm-necklace/${p.image}`],
+  images: [getImagePath(`images/products/unique-charm-necklace/${p.image}`)],
   featured: p.id === 'ucn-1' || p.id === 'ucn-2'
 }));
 
