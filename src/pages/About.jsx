@@ -123,6 +123,7 @@ const About = () => {
               src={getImagePath('images/hero/about-img1.jpg')} 
               alt="Artisan crafting jewelry" 
               className="w-full h-full object-cover"
+              loading="lazy"
             />
             <div className="absolute inset-0 bg-gradient-to-l from-transparent to-stone-900/20" />
             

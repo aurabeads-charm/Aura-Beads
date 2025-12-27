@@ -43,6 +43,7 @@ const ProductDetail = () => {
               src={product.images[activeImage]} 
               alt={product.name} 
               className="w-full h-full object-cover transition-opacity duration-500"
+              loading="lazy"
             />
           </motion.div>
           {product.images.length > 1 && (
@@ -55,7 +56,7 @@ const ProductDetail = () => {
                     activeImage === idx ? 'border-amber-600 shadow-md' : 'border-transparent opacity-60'
                   }`}
                 >
-                  <img src={img} alt={`${product.name} view ${idx}`} className="w-full h-full object-cover" />
+                  <img src={img} alt={`${product.name} view ${idx}`} className="w-full h-full object-cover" loading="lazy" />
                 </button>
               ))}
             </div>
@@ -107,7 +108,7 @@ const ProductDetail = () => {
             <div key={p.id}>
               <Link to={`/product/${p.id}`} className="block group">
                 <div className="aspect-[4/5] bg-neutral-100 mb-3 overflow-hidden rounded-sm border border-neutral-50">
-                  <img src={p.images[0]} className="w-full h-full object-cover transition-transform group-hover:scale-105" alt={p.name} />
+                  <img src={p.images[0]} className="w-full h-full object-cover transition-transform group-hover:scale-105" alt={p.name} loading="lazy" />
                 </div>
                 <h3 className="font-serif text-base line-clamp-1">{p.name}</h3>
                 <p className="text-neutral-500 text-xs mt-1">₹{p.price.toLocaleString('en-IN')}</p>

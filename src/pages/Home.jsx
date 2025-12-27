@@ -258,6 +258,7 @@ const Home = () => {
                   src={category.image} 
                   alt={category.name}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent group-hover:from-black/80 transition-all duration-500" />
                 <div className="absolute inset-0 flex flex-col items-center justify-end p-4 md:p-6 text-white text-center">

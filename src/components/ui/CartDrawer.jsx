@@ -64,7 +64,7 @@ const CartDrawer = ({ isOpen, onClose }) => {
             cart.map((item) => (
               <div key={item.id} className="flex gap-4">
                 <div className="w-24 h-24 flex-shrink-0 bg-neutral-100 rounded-sm overflow-hidden">
-                  <img src={item.images[0]} alt={item.name} className="w-full h-full object-cover" />
+                  <img src={item.images[0]} alt={item.name} className="w-full h-full object-cover" loading="lazy" />
                 </div>
                 <div className="flex-1 flex flex-col justify-between">
                   <div>
