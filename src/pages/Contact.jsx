@@ -1,7 +1,79 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { CONTACT_INFO } from '../constants';
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [errors, setErrors] = useState({});
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors(prev => ({
+        ...prev,
+        [name]: ''
+      }));
+    }
+  };
+
+  const validateForm = () => {
+    const newErrors = {};
+    
+    if (!formData.name.trim()) {
+      newErrors.name = 'Full name is required';
+    }
+    
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email address is required';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = 'Please enter a valid email address';
+    }
+    
+    if (!formData.message.trim()) {
+      newErrors.message = 'Message is required';
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    if (!validateForm()) {
+      return;
+    }
+
+    // Create mailto link with form data
+    const subject = encodeURIComponent(`Contact from ${formData.name} - Aura Beads Charm`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    );
+    
+    // Open email client
+    window.location.href = `mailto:harini3054@gmail.com?subject=${subject}&body=${body}`;
+    
+    // Show success message
+    setIsSubmitted(true);
+    
+    // Reset form after submission
+    setFormData({ name: '', email: '', message: '' });
+    
+    // Hide success message after 5 seconds
+    setTimeout(() => {
+      setIsSubmitted(false);
+    }, 5000);
+  };
+
   return (
     <div className="container mx-auto px-4 py-20">
       <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20">
@@ -35,7 +107,7 @@ const Contact = () => {
               </div>
               <div>
                 <h3 className="text-sm font-bold uppercase tracking-widest text-neutral-800 mb-1">Custom Orders</h3>
-                <p className="text-neutral-500 font-light">Customization starts at $20. Message us for a quote.</p>
+                <p className="text-neutral-500 font-light">For Customization, please message us for a quote.</p>
               </div>
             </div>
 
@@ -55,20 +127,68 @@ const Contact = () => {
 
         <div className="bg-white p-10 soft-shadow rounded-sm border border-neutral-100">
           <h2 className="text-3xl font-serif text-neutral-800 mb-8 text-center italic">Direct Inquiry</h2>
-          <form className="space-y-6">
+          
+          {isSubmitted && (
+            <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-sm">
+              <p className="text-green-700 text-center text-sm">
+                ✓ Your email client has been opened. Please send the email to complete your inquiry.
+              </p>
+            </div>
+          )}
+          
+          <form className="space-y-6" onSubmit={handleSubmit}>
             <div>
-              <label className="block text-[10px] uppercase tracking-widest font-bold text-neutral-400 mb-2">Full Name</label>
-              <input type="text" className="w-full px-4 py-3 bg-neutral-50 border border-neutral-100 focus:border-amber-600 focus:outline-none transition-colors" placeholder="e.g. Elena Smith" />
+              <label className="block text-[10px] uppercase tracking-widest font-bold text-neutral-400 mb-2">
+                Full Name <span className="text-red-500">*</span>
+              </label>
+              <input 
+                type="text" 
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                className={`w-full px-4 py-3 bg-neutral-50 border ${errors.name ? 'border-red-400' : 'border-neutral-100'} focus:border-amber-600 focus:outline-none transition-colors`} 
+                placeholder="e.g. Elena Smith" 
+              />
+              {errors.name && (
+                <p className="mt-1 text-red-500 text-xs">{errors.name}</p>
+              )}
             </div>
             <div>
-              <label className="block text-[10px] uppercase tracking-widest font-bold text-neutral-400 mb-2">Email Address</label>
-              <input type="email" className="w-full px-4 py-3 bg-neutral-50 border border-neutral-100 focus:border-amber-600 focus:outline-none transition-colors" placeholder="elena@example.com" />
+              <label className="block text-[10px] uppercase tracking-widest font-bold text-neutral-400 mb-2">
+                Email Address <span className="text-red-500">*</span>
+              </label>
+              <input 
+                type="email" 
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                className={`w-full px-4 py-3 bg-neutral-50 border ${errors.email ? 'border-red-400' : 'border-neutral-100'} focus:border-amber-600 focus:outline-none transition-colors`} 
+                placeholder="elena@example.com" 
+              />
+              {errors.email && (
+                <p className="mt-1 text-red-500 text-xs">{errors.email}</p>
+              )}
             </div>
             <div>
-              <label className="block text-[10px] uppercase tracking-widest font-bold text-neutral-400 mb-2">Message</label>
-              <textarea rows={4} className="w-full px-4 py-3 bg-neutral-50 border border-neutral-100 focus:border-amber-600 focus:outline-none transition-colors resize-none" placeholder="How can we help you?"></textarea>
+              <label className="block text-[10px] uppercase tracking-widest font-bold text-neutral-400 mb-2">
+                Message <span className="text-red-500">*</span>
+              </label>
+              <textarea 
+                rows={4} 
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                className={`w-full px-4 py-3 bg-neutral-50 border ${errors.message ? 'border-red-400' : 'border-neutral-100'} focus:border-amber-600 focus:outline-none transition-colors resize-none`} 
+                placeholder="How can we help you?"
+              ></textarea>
+              {errors.message && (
+                <p className="mt-1 text-red-500 text-xs">{errors.message}</p>
+              )}
             </div>
-            <button className="w-full bg-neutral-900 text-white py-4 font-bold uppercase tracking-widest text-xs hover:bg-amber-600 transition-colors">
+            <button 
+              type="submit"
+              className="w-full bg-neutral-900 text-white py-4 font-bold uppercase tracking-widest text-xs hover:bg-amber-600 transition-colors"
+            >
               Send Message
             </button>
           </form>
