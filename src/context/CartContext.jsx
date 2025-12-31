@@ -1,9 +1,24 @@
-import React, { createContext, useContext, useState, useCallback } from 'react';
+import React, { createContext, useContext, useState, useCallback, useEffect } from 'react';
 
 const CartContext = createContext(undefined);
 
+// Helper to get cart from localStorage
+const getStoredCart = () => {
+  try {
+    const stored = localStorage.getItem('aurabeads_cart');
+    return stored ? JSON.parse(stored) : [];
+  } catch {
+    return [];
+  }
+};
+
 export const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(() => getStoredCart());
+
+  // Save cart to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem('aurabeads_cart', JSON.stringify(cart));
+  }, [cart]);
 
   const addToCart = useCallback((product) => {
     setCart(prev => {

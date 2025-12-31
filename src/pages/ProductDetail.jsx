@@ -9,6 +9,8 @@ const ProductDetail = () => {
   const { addToCart } = useCart();
   const baseProduct = PRODUCTS.find(p => p.id === id);
   const [activeImage, setActiveImage] = useState(0);
+  const [showAddedToCart, setShowAddedToCart] = useState(false);
+  const [addedProductName, setAddedProductName] = useState('');
 
   // Build a list of products for each image (main product + reference products)
   const imageProducts = useMemo(() => {
@@ -49,7 +51,24 @@ const ProductDetail = () => {
   }
 
   return (
-    <div className="container mx-auto px-4 py-6 md:py-12">
+    <div className="container mx-auto px-4 py-6 md:py-12 relative">
+      {/* Toast Notification */}
+      {showAddedToCart && (
+        <motion.div
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -50 }}
+          className="fixed top-20 left-1/2 transform -translate-x-1/2 z-50 bg-green-600 text-white px-6 py-4 rounded-sm shadow-2xl flex items-center gap-3"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+          </svg>
+          <div>
+            <p className="font-bold text-sm">Added to Bag!</p>
+            <p className="text-xs opacity-90">{addedProductName}</p>
+          </div>
+        </motion.div>
+      )}
       <nav className="mb-6 md:mb-8 overflow-x-auto whitespace-nowrap no-scrollbar">
         <ul className="flex items-center space-x-2 text-[8px] md:text-[10px] uppercase tracking-widest text-neutral-400">
           <li><Link to="/" className="hover:text-amber-600">Home</Link></li>
@@ -120,9 +139,17 @@ const ProductDetail = () => {
 
             <div className="sticky bottom-4 md:relative md:bottom-auto z-10">
               <button
-                onClick={() => addToCart(activeProduct)}
-                className="w-full bg-neutral-900 text-white py-5 font-bold uppercase tracking-[0.3em] text-[10px] md:text-xs shadow-2xl hover:bg-amber-600 transition-all active:scale-95"
+                onClick={() => {
+                  addToCart(activeProduct);
+                  setAddedProductName(activeProduct.name);
+                  setShowAddedToCart(true);
+                  setTimeout(() => setShowAddedToCart(false), 3000);
+                }}
+                className="w-full bg-neutral-900 text-white py-5 font-bold uppercase tracking-[0.3em] text-[10px] md:text-xs shadow-2xl hover:bg-amber-600 transition-all active:scale-95 flex items-center justify-center gap-2"
               >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
                 Add to Shopping Bag
               </button>
             </div>
