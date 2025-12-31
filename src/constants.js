@@ -57,117 +57,100 @@ export const CATEGORIES = [
 // Anti Tarnish Bracelet (14 products)
 // To change price: edit the "price" value for each product
 export const antiTarnishBraceletProducts = [
-  { id: 'atb-1', name: 'Anti Tarnish Bracelet Style 1', price: 150, image: '1.jpg' },
-  { id: 'atb-2', name: 'Anti Tarnish Bracelet Style 2', price: 150, image: '2.jpg' },
-  { id: 'atb-3', name: 'Anti Tarnish Bracelet Style 3', price: 150, image: '3.jpg' },
-  { id: 'atb-4', name: 'Anti Tarnish Bracelet Style 4', price: 169, image: '4.jpg' },
-  { id: 'atb-5', name: 'Anti Tarnish Bracelet Style 5', price: 150, image: '5.jpg' },
-  { id: 'atb-6', name: 'Anti Tarnish Bracelet Style 6', price: 150, image: '6.jpg' },
-  { id: 'atb-7', name: 'Anti Tarnish Bracelet Style 7', price: 99, image: '7.jpg' },
-  { id: 'atb-8', name: 'Anti Tarnish Bracelet Style 8', price: 150, image: '8.jpg' },
-  { id: 'atb-9', name: 'Anti Tarnish Bracelet Style 9', price: 99, image: '9.jpg' },
-  { id: 'atb-10', name: 'Anti Tarnish Bracelet Style 10', price: 169, image: '10.jpg' },
-  { id: 'atb-11', name: 'Anti Tarnish Bracelet Style 11', price: 99, image: '11.jpg' },
-  { id: 'atb-12', name: 'Anti Tarnish Bracelet Style 12', price: 169, image: '12.jpg' },
-  { id: 'atb-13', name: 'Anti Tarnish Bracelet Style 13', price: 150, image: '13.jpg' },
-  { id: 'atb-14', name: 'Anti Tarnish Bracelet Style 14', price: 150, image: '14.jpg' },
-].map(p => ({
-  ...p,
-  category: 'Anti Tarnish Bracelet',
-  categoryId: 'anti-tarnish-bracelet',
-  description: 'Premium anti-tarnish bracelet that maintains its shine forever.',
-  longDescription: 'This exquisite anti-tarnish bracelet is crafted with premium materials that resist oxidation and maintain their beautiful shine for years.',
-  images: [getImagePath(`images/products/anti-tarnish-bracelet/${p.image}`)],
-  featured: p.id === 'atb-1' || p.id === 'atb-2'
-}));
+  { id: 'atb-1', name: 'Anti Tarnish Bracelet Style 1', price: 150, image: '1.jpg', extraImages: ['3.jpg', '6.jpg', '8.jpg'] },
+  { id: 'atb-2', name: 'Anti Tarnish Bracelet Style 2', price: 150, image: '2.jpg', extraImages: ['5.jpg', '13.jpg', '14.jpg'] },
+  { id: 'atb-4', name: 'Anti Tarnish Bracelet Style 4', price: 169, image: '4.jpg', extraImages: ['10.jpg', '12.jpg'] },
+  { id: 'atb-7', name: 'Anti Tarnish Bracelet Style 7', price: 99, image: '7.jpg', extraImages: ['9.jpg', '11.jpg'] },
+].map(p => {
+  const baseImages = [getImagePath(`images/products/anti-tarnish-bracelet/${p.image}`)];
+  const allImages = p.extraImages 
+    ? [...baseImages, ...p.extraImages.map(img => getImagePath(`images/products/anti-tarnish-bracelet/${img}`))]
+    : baseImages;
+  
+  return {
+    ...p,
+    category: 'Anti Tarnish Bracelet',
+    categoryId: 'anti-tarnish-bracelet',
+    description: 'Premium anti-tarnish bracelet that maintains its shine forever.',
+    longDescription: 'This exquisite anti-tarnish bracelet is crafted with premium materials that resist oxidation and maintain their beautiful shine for years.',
+    images: allImages,
+    featured: p.id === 'atb-1' || p.id === 'atb-2'
+  };
+});
 
 // Anti Tarnish Earrings (15 products)
 export const antiTarnishEarringsProducts = [
-  { id: 'ate-1', name: 'Anti Tarnish Earrings Style 1', price: 99, image: '1.jpg' },
-  { id: 'ate-2', name: 'Anti Tarnish Earrings Style 2', price: 99, image: '2.jpg' },
-  { id: 'ate-3', name: 'Anti Tarnish Earrings Style 3', price: 99, image: '3.jpg' },
-  { id: 'ate-4', name: 'Anti Tarnish Earrings Style 4', price: 99, image: '4.jpg' },
-  { id: 'ate-5', name: 'Anti Tarnish Earrings Style 5', price: 99, image: '5.jpg' },
-  { id: 'ate-6', name: 'Anti Tarnish Earrings Style 6', price: 99, image: '6.jpg' },
-  { id: 'ate-7', name: 'Anti Tarnish Earrings Style 7', price: 99, image: '7.jpg' },
-  { id: 'ate-8', name: 'Anti Tarnish Earrings Style 8', price: 99, image: '8.jpg' },
-  { id: 'ate-9', name: 'Anti Tarnish Earrings Style 9', price: 99, image: '9.jpg' },
-  { id: 'ate-10', name: 'Anti Tarnish Earrings Style 10', price: 99, image: '10.jpg' },
-  { id: 'ate-11', name: 'Anti Tarnish Earrings Style 11', price: 99, image: '11.jpg' },
-  { id: 'ate-12', name: 'Anti Tarnish Earrings Style 12', price: 99, image: '12.jpg' },
-  { id: 'ate-13', name: 'Anti Tarnish Earrings Style 13', price: 99, image: '13.jpg' },
-  { id: 'ate-14', name: 'Anti Tarnish Earrings Style 14', price: 99, image: '14.jpg' },
-  { id: 'ate-15', name: 'Anti Tarnish Earrings Style 15', price: 99, image: '15.jpg' },
-].map(p => ({
-  ...p,
-  category: 'Anti Tarnish Earrings',
-  categoryId: 'anti-tarnish-earrings',
-  description: 'Elegant anti-tarnish earrings that stay beautiful always.',
-  longDescription: 'These stunning anti-tarnish earrings are designed to complement any outfit. Made with hypoallergenic materials.',
-  images: [getImagePath(`images/products/anti-tarnish-earrings/${p.image}`)],
-  featured: p.id === 'ate-1' || p.id === 'ate-2'
-}));
+  { id: 'ate-1', name: 'Anti Tarnish Earrings Style 1', price: 99, image: '1.jpg', extraImages: ['2.jpg', '12.jpg'] },
+  { id: 'ate-3', name: 'Anti Tarnish Earrings Style 3', price: 99, image: '3.jpg', extraImages: ['9.jpg', '13.jpg'] },
+  { id: 'ate-4', name: 'Anti Tarnish Earrings Style 4', price: 99, image: '4.jpg', extraImages: ['8.jpg', '14.jpg'] },
+  { id: 'ate-5', name: 'Anti Tarnish Earrings Style 5', price: 99, image: '5.jpg', extraImages: ['6.jpg', '11.jpg'] },
+  { id: 'ate-7', name: 'Anti Tarnish Earrings Style 7', price: 99, image: '7.jpg', extraImages: ['10.jpg', '15.jpg'] },
+].map(p => {
+  const baseImages = [getImagePath(`images/products/anti-tarnish-earrings/${p.image}`)];
+  const allImages = p.extraImages 
+    ? [...baseImages, ...p.extraImages.map(img => getImagePath(`images/products/anti-tarnish-earrings/${img}`))]
+    : baseImages;
+  
+  return {
+    ...p,
+    category: 'Anti Tarnish Earrings',
+    categoryId: 'anti-tarnish-earrings',
+    description: 'Elegant anti-tarnish earrings that stay beautiful always.',
+    longDescription: 'These stunning anti-tarnish earrings are designed to complement any outfit. Made with hypoallergenic materials.',
+    images: allImages,
+    featured: p.id === 'ate-1' || p.id === 'ate-2'
+  };
+});
 
 // Anti Tarnish Necklace (23 products)
 export const antiTarnishNecklaceProducts = [
-  { id: 'atn-1', name: 'Anti Tarnish Necklace Style 1', price: 199, image: '1.jpg' },
-  { id: 'atn-2', name: 'Anti Tarnish Necklace Style 2', price: 199, image: '2.jpg' },
-  { id: 'atn-3', name: 'Anti Tarnish Necklace Style 3', price: 199, image: '3.jpg' },
-  { id: 'atn-4', name: 'Anti Tarnish Necklace Style 4', price: 199, image: '4.jpg' },
-  { id: 'atn-5', name: 'Anti Tarnish Necklace Style 5', price: 199, image: '5.jpg' },
-  { id: 'atn-6', name: 'Anti Tarnish Necklace Style 6', price: 199, image: '6.jpg' },
-  { id: 'atn-7', name: 'Anti Tarnish Necklace Style 7', price: 199, image: '7.jpg' },
-  { id: 'atn-8', name: 'Anti Tarnish Necklace Style 8', price: 199, image: '8.jpg' },
-  { id: 'atn-9', name: 'Anti Tarnish Necklace Style 9', price: 199, image: '9.jpg' },
-  { id: 'atn-10', name: 'Anti Tarnish Necklace Style 10', price: 199, image: '10.jpg' },
-  { id: 'atn-11', name: 'Anti Tarnish Necklace Style 11', price: 199, image: '11.jpg' },
-  { id: 'atn-12', name: 'Anti Tarnish Necklace Style 12', price: 199, image: '12.jpg' },
-  { id: 'atn-13', name: 'Anti Tarnish Necklace Style 13', price: 199, image: '13.jpg' },
-  { id: 'atn-14', name: 'Anti Tarnish Necklace Style 14', price: 199, image: '14.jpg' },
-  { id: 'atn-15', name: 'Anti Tarnish Necklace Style 15', price: 199, image: '15.jpg' },
-  { id: 'atn-16', name: 'Anti Tarnish Necklace Style 16', price: 199, image: '16.jpg' },
-  { id: 'atn-17', name: 'Anti Tarnish Necklace Style 17', price: 199, image: '17.jpg' },
-  { id: 'atn-18', name: 'Anti Tarnish Necklace Style 18', price: 199, image: '18.jpg' },
-  { id: 'atn-19', name: 'Anti Tarnish Necklace Style 19', price: 199, image: '19.jpg' },
-  { id: 'atn-20', name: 'Anti Tarnish Necklace Style 20', price: 199, image: '20.jpg' },
-  { id: 'atn-21', name: 'Anti Tarnish Necklace Style 21', price: 199, image: '21.jpg' },
-  { id: 'atn-22', name: 'Anti Tarnish Necklace Style 22', price: 199, image: '22.jpg' },
-  { id: 'atn-23', name: 'Anti Tarnish Necklace Style 23', price: 199, image: '23.jpg' },
-].map(p => ({
-  ...p,
-  category: 'Anti Tarnish Necklace',
-  categoryId: 'anti-tarnish-necklace',
-  description: 'Beautiful anti-tarnish necklace that never loses its luster.',
-  longDescription: 'This gorgeous anti-tarnish necklace maintains its beautiful shine and resists tarnishing over time.',
-  images: [getImagePath(`images/products/anti-tarnish-necklace/${p.image}`)],
-  featured: p.id === 'atn-1' || p.id === 'atn-2'
-}));
+  { id: 'atn-1', name: 'Anti Tarnish Necklace Style 1', price: 199, image: '1.jpg', extraImages: ['2.jpg', '3.jpg'] },
+  { id: 'atn-4', name: 'Anti Tarnish Necklace Style 4', price: 199, image: '4.jpg', extraImages: ['5.jpg', '6.jpg'] },
+  { id: 'atn-9', name: 'Anti Tarnish Necklace Style 9', price: 199, image: '9.jpg', extraImages: ['7.jpg', '8.jpg', '10.jpg', '11.jpg', '12.jpg'] },
+  { id: 'atn-13', name: 'Anti Tarnish Necklace Style 13', price: 199, image: '13.jpg', extraImages: ['14.jpg', '15.jpg'] },
+  { id: 'atn-16', name: 'Anti Tarnish Necklace Style 16', price: 199, image: '16.jpg', extraImages: ['17.jpg', '18.jpg'] },
+  { id: 'atn-19', name: 'Anti Tarnish Necklace Style 19', price: 199, image: '19.jpg', extraImages: ['20.jpg', '21.jpg'] },
+  { id: 'atn-22', name: 'Anti Tarnish Necklace Style 22', price: 199, image: '22.jpg', extraImages: ['23.jpg'] },
+].map(p => {
+  const baseImages = [getImagePath(`images/products/anti-tarnish-necklace/${p.image}`)];
+  const allImages = p.extraImages 
+    ? [...baseImages, ...p.extraImages.map(img => getImagePath(`images/products/anti-tarnish-necklace/${img}`))]
+    : baseImages;
+  
+  return {
+    ...p,
+    category: 'Anti Tarnish Necklace',
+    categoryId: 'anti-tarnish-necklace',
+    description: 'Beautiful anti-tarnish necklace that never loses its luster.',
+    longDescription: 'This gorgeous anti-tarnish necklace maintains its beautiful shine and resists tarnishing over time.',
+    images: allImages,
+    featured: p.id === 'atn-1' || p.id === 'atn-2'
+  };
+});
 
 // Anti Tarnish Rings (14 products)
 export const antiTarnishRingsProducts = [
-  { id: 'atr-1', name: 'Anti Tarnish Ring Style 1', price: 99, image: '1.jpg' },
-  { id: 'atr-2', name: 'Anti Tarnish Ring Style 2', price: 99, image: '2.jpg' },
-  { id: 'atr-3', name: 'Anti Tarnish Ring Style 3', price: 99, image: '3.jpg' },
-  { id: 'atr-4', name: 'Anti Tarnish Ring Style 4', price: 99, image: '4.jpg' },
-  { id: 'atr-5', name: 'Anti Tarnish Ring Style 5', price: 99, image: '5.jpg' },
-  { id: 'atr-6', name: 'Anti Tarnish Ring Style 6', price: 99, image: '6.jpg' },
-  { id: 'atr-7', name: 'Anti Tarnish Ring Style 7', price: 99, image: '7.jpg' },
-  { id: 'atr-8', name: 'Anti Tarnish Ring Style 8', price: 99, image: '8.jpg' },
-  { id: 'atr-9', name: 'Anti Tarnish Ring Style 9', price: 99, image: '9.jpg' },
-  { id: 'atr-10', name: 'Anti Tarnish Ring Style 10', price: 99, image: '10.jpg' },
-  { id: 'atr-11', name: 'Anti Tarnish Ring Style 11', price: 99, image: '11.jpg' },
-  { id: 'atr-12', name: 'Anti Tarnish Ring Style 12', price: 99, image: '12.jpg' },
-  { id: 'atr-13', name: 'Anti Tarnish Ring Style 13', price: 99, image: '13.jpg' },
-  { id: 'atr-14', name: 'Anti Tarnish Ring Style 14', price: 99, image: '14.jpg' },
-].map(p => ({
-  ...p,
-  category: 'Anti Tarnish Rings',
-  categoryId: 'anti-tarnish-rings',
-  description: 'Stunning anti-tarnish ring made with premium metals.',
-  longDescription: 'This elegant anti-tarnish ring is crafted with the finest materials to ensure lasting beauty.',
-  images: [getImagePath(`images/products/anti-tarnish-rings/${p.image}`)],
-  featured: p.id === 'atr-1' || p.id === 'atr-2'
-}));
+  { id: 'atr-1', name: 'Anti Tarnish Ring Style 1', price: 99, image: '1.jpg', extraImages: ['2.jpg', '3.jpg'] },
+  { id: 'atr-4', name: 'Anti Tarnish Ring Style 4', price: 99, image: '4.jpg', extraImages: ['5.jpg'] },
+  { id: 'atr-6', name: 'Anti Tarnish Ring Style 6', price: 99, image: '6.jpg', extraImages: ['7.jpg', '8.jpg'] },
+  { id: 'atr-9', name: 'Anti Tarnish Ring Style 9', price: 99, image: '9.jpg', extraImages: ['10.jpg', '11.jpg'] },
+  { id: 'atr-12', name: 'Anti Tarnish Ring Style 12', price: 99, image: '12.jpg', extraImages: ['13.jpg', '14.jpg'] },
+].map(p => {
+  const baseImages = [getImagePath(`images/products/anti-tarnish-rings/${p.image}`)];
+  const allImages = p.extraImages 
+    ? [...baseImages, ...p.extraImages.map(img => getImagePath(`images/products/anti-tarnish-rings/${img}`))]
+    : baseImages;
+  
+  return {
+    ...p,
+    category: 'Anti Tarnish Rings',
+    categoryId: 'anti-tarnish-rings',
+    description: 'Stunning anti-tarnish ring made with premium metals.',
+    longDescription: 'This elegant anti-tarnish ring is crafted with the finest materials to ensure lasting beauty.',
+    images: allImages,
+    featured: p.id === 'atr-1' || p.id === 'atr-2'
+  };
+});
 
 // Beads Bracelet (59 products)
 export const beadsBraceletProducts = [
@@ -242,39 +225,39 @@ export const beadsBraceletProducts = [
 
 // Korean Earrings (33 products)
 export const koreanEarringsProducts = [
-  { id: 'ke-1', name: 'Korean Earrings Style 1', price: 75, image: '1.jpg' },
-  { id: 'ke-2', name: 'Korean Earrings Style 2', price: 75, image: '2.jpg' },
-  { id: 'ke-3', name: 'Korean Earrings Style 3', price: 75, image: '3.jpg' },
-  { id: 'ke-4', name: 'Korean Earrings Style 4', price: 75, image: '4.jpg' },
-  { id: 'ke-5', name: 'Korean Earrings Style 5', price: 75, image: '5.jpg' },
-  { id: 'ke-6', name: 'Korean Earrings Style 6', price: 75, image: '6.jpg' },
-  { id: 'ke-7', name: 'Korean Earrings Style 7', price: 75, image: '7.jpg' },
-  { id: 'ke-8', name: 'Korean Earrings Style 8', price: 75, image: '8.jpg' },
-  { id: 'ke-9', name: 'Korean Earrings Style 9', price: 75, image: '9.jpg' },
-  { id: 'ke-10', name: 'Korean Earrings Style 10', price: 75, image: '10.jpg' },
-  { id: 'ke-11', name: 'Korean Earrings Style 11', price: 75, image: '11.jpg' },
-  { id: 'ke-12', name: 'Korean Earrings Style 12', price: 75, image: '12.jpg' },
-  { id: 'ke-13', name: 'Korean Earrings Style 13', price: 75, image: '13.jpg' },
-  { id: 'ke-14', name: 'Korean Earrings Style 14', price: 75, image: '14.jpg' },
-  { id: 'ke-15', name: 'Korean Earrings Style 15', price: 75, image: '15.jpg' },
-  { id: 'ke-16', name: 'Korean Earrings Style 16', price: 75, image: '16.jpg' },
-  { id: 'ke-17', name: 'Korean Earrings Style 17', price: 75, image: '17.jpg' },
-  { id: 'ke-18', name: 'Korean Earrings Style 18', price: 75, image: '18.jpg' },
-  { id: 'ke-19', name: 'Korean Earrings Style 19', price: 75, image: '19.jpg' },
-  { id: 'ke-20', name: 'Korean Earrings Style 20', price: 75, image: '20.jpg' },
-  { id: 'ke-21', name: 'Korean Earrings Style 21', price: 75, image: '21.jpg' },
-  { id: 'ke-22', name: 'Korean Earrings Style 22', price: 75, image: '22.jpg' },
-  { id: 'ke-23', name: 'Korean Earrings Style 23', price: 75, image: '23.jpg' },
-  { id: 'ke-24', name: 'Korean Earrings Style 24', price: 75, image: '24.jpg' },
-  { id: 'ke-25', name: 'Korean Earrings Style 25', price: 75, image: '25.jpg' },
-  { id: 'ke-26', name: 'Korean Earrings Style 26', price: 75, image: '26.jpg' },
-  { id: 'ke-27', name: 'Korean Earrings Style 27', price: 75, image: '27.jpg' },
-  { id: 'ke-28', name: 'Korean Earrings Style 28', price: 75, image: '28.jpg' },
-  { id: 'ke-29', name: 'Korean Earrings Style 29', price: 75, image: '29.jpg' },
-  { id: 'ke-30', name: 'Korean Earrings Style 30', price: 75, image: '30.jpg' },
-  { id: 'ke-31', name: 'Korean Earrings Style 31', price: 75, image: '31.jpg' },
-  { id: 'ke-32', name: 'Korean Earrings Style 32', price: 75, image: '32.jpg' },
-  { id: 'ke-33', name: 'Korean Earrings Style 33', price: 75, image: '33.jpg' },
+  { id: 'ke-1', name: 'Korean Earrings Style 1', price: 45, image: '1.jpg' },
+  { id: 'ke-2', name: 'Korean Earrings Style 2', price: 45, image: '2.jpg' },
+  { id: 'ke-3', name: 'Korean Earrings Style 3', price: 45, image: '3.jpg' },
+  { id: 'ke-4', name: 'Korean Earrings Style 4', price: 45, image: '4.jpg' },
+  { id: 'ke-5', name: 'Korean Earrings Style 5', price: 45, image: '5.jpg' },
+  { id: 'ke-6', name: 'Korean Earrings Style 6', price: 45, image: '6.jpg' },
+  { id: 'ke-7', name: 'Korean Earrings Style 7', price: 45, image: '7.jpg' },
+  { id: 'ke-8', name: 'Korean Earrings Style 8', price: 45, image: '8.jpg' },
+  { id: 'ke-9', name: 'Korean Earrings Style 9', price: 45, image: '9.jpg' },
+  { id: 'ke-10', name: 'Korean Earrings Style 10', price: 45, image: '10.jpg' },
+  { id: 'ke-11', name: 'Korean Earrings Style 11', price: 45, image: '11.jpg' },
+  { id: 'ke-12', name: 'Korean Earrings Style 12', price: 45, image: '12.jpg' },
+  { id: 'ke-13', name: 'Korean Earrings Style 13', price: 45, image: '13.jpg' },
+  { id: 'ke-14', name: 'Korean Earrings Style 14', price: 45, image: '14.jpg' },
+  { id: 'ke-15', name: 'Korean Earrings Style 15', price: 45, image: '15.jpg' },
+  { id: 'ke-16', name: 'Korean Earrings Style 16', price: 45, image: '16.jpg' },
+  { id: 'ke-17', name: 'Korean Earrings Style 17', price: 45, image: '17.jpg' },
+  { id: 'ke-18', name: 'Korean Earrings Style 18', price: 45, image: '18.jpg' },
+  { id: 'ke-19', name: 'Korean Earrings Style 19', price: 45, image: '19.jpg' },
+  { id: 'ke-20', name: 'Korean Earrings Style 20', price: 45, image: '20.jpg' },
+  { id: 'ke-21', name: 'Korean Earrings Style 21', price: 45, image: '21.jpg' },
+  { id: 'ke-22', name: 'Korean Earrings Style 22', price: 45, image: '22.jpg' },
+  { id: 'ke-23', name: 'Korean Earrings Style 23', price: 45, image: '23.jpg' },
+  { id: 'ke-24', name: 'Korean Earrings Style 24', price: 45, image: '24.jpg' },
+  { id: 'ke-25', name: 'Korean Earrings Style 25', price: 45, image: '25.jpg' },
+  { id: 'ke-26', name: 'Korean Earrings Style 26', price: 45, image: '26.jpg' },
+  { id: 'ke-27', name: 'Korean Earrings Style 27', price: 45, image: '27.jpg' },
+  { id: 'ke-28', name: 'Korean Earrings Style 28', price: 45, image: '28.jpg' },
+  { id: 'ke-29', name: 'Korean Earrings Style 29', price: 45, image: '29.jpg' },
+  { id: 'ke-30', name: 'Korean Earrings Style 30', price: 45, image: '30.jpg' },
+  { id: 'ke-31', name: 'Korean Earrings Style 31', price: 45, image: '31.jpg' },
+  { id: 'ke-32', name: 'Korean Earrings Style 32', price: 45, image: '32.jpg' },
+  { id: 'ke-33', name: 'Korean Earrings Style 33', price: 45, image: '33.jpg' },
 ].map(p => ({
   ...p,
   category: 'Korean Earrings',
@@ -288,21 +271,16 @@ export const koreanEarringsProducts = [
 // Unique Charm Necklace (27 products)
 export const uniqueCharmNecklaceProducts = [
   { id: 'ucn-1', name: 'Unique Charm Necklace Style 1', price: 59, image: '1.jpg', extraImages: ['2.jpg', '16.jpg', '24.jpg'] },
-  { id: 'ucn-2', name: 'Unique Charm Necklace Style 2', price: 59, image: '2.jpg', extraImages: ['1.jpg', '16.jpg', '24.jpg'] },
-  { id: 'ucn-3', name: 'Unique Charm Necklace Style 3', price: 39, image: '3.jpg', extraImages: ['4.jpg', '27.jpg'] },
   { id: 'ucn-4', name: 'Unique Charm Necklace Style 4', price: 39, image: '4.jpg', extraImages: ['3.jpg', '27.jpg'] },
-  { id: 'ucn-5', name: 'Unique Charm Necklace Style 5', price: 55, image: '5.jpg', extraImages: ['12.jpg', '17.jpg', '26.jpg'] },
-  { id: 'ucn-6', name: 'Unique Charm Necklace Style 6', price: 99, image: '6.jpg', extraImages: ['8.jpg', '7.jpg', '10.jpg', '15.jpg', '23.jpg', '25.jpg'] },
+  { id: 'ucn-6', name: 'Unique Charm Necklace Style 6', price: 99, image: '6.jpg', extraImages: ['8.jpg', '7.jpg', '10.jpg', '15.jpg', '23.jpg', '25.jpg', '13.jpg'] },
   { id: 'ucn-7', name: 'Unique Charm Necklace Style 7', price: 99, image: '7.jpg', extraImages: ['8.jpg', '6.jpg', '10.jpg', '15.jpg', '23.jpg', '25.jpg'] },
   { id: 'ucn-8', name: 'Unique Charm Necklace Style 8', price: 99, image: '8.jpg', extraImages: ['6.jpg', '7.jpg', '10.jpg', '15.jpg', '23.jpg', '25.jpg'] },
   { id: 'ucn-9', name: 'Unique Charm Necklace Style 9', price: 45, image: '9.jpg', extraImages: ['14.jpg'] },
   { id: 'ucn-10', name: 'Unique Charm Necklace Style 10', price: 99, image: '10.jpg', extraImages: ['8.jpg', '6.jpg', '7.jpg', '15.jpg', '23.jpg', '25.jpg'] },
   { id: 'ucn-11', name: 'Unique Charm Necklace Style 11', price: 99, image: '11.jpg', extraImages: ['19.jpg', '21.jpg', '22.jpg'] },
   { id: 'ucn-12', name: 'Unique Charm Necklace Style 12', price: 55, image: '12.jpg', extraImages: ['5.jpg', '17.jpg', '26.jpg'] },
-  { id: 'ucn-13', name: 'Unique Charm Necklace Style 13', price: 449, image: '13.jpg' },
   { id: 'ucn-14', name: 'Unique Charm Necklace Style 14', price: 45, image: '14.jpg', extraImages: ['9.jpg'] },
   { id: 'ucn-15', name: 'Unique Charm Necklace Style 15', price: 99, image: '15.jpg', extraImages: ['8.jpg', '6.jpg', '7.jpg', '10.jpg', '23.jpg', '25.jpg'] },
-  { id: 'ucn-16', name: 'Unique Charm Necklace Style 16', price: 59, image: '16.jpg', extraImages: ['1.jpg', '2.jpg', '24.jpg'] },
   { id: 'ucn-17', name: 'Unique Charm Necklace Style 17', price: 55, image: '17.jpg', extraImages: ['5.jpg', '12.jpg', '26.jpg'] },
   { id: 'ucn-18', name: 'Unique Charm Necklace Style 18', price: 69, image: '18.jpg' },
   { id: 'ucn-19', name: 'Unique Charm Necklace Style 19', price: 99, image: '19.jpg', extraImages: ['11.jpg', '21.jpg', '22.jpg'] },
@@ -310,10 +288,7 @@ export const uniqueCharmNecklaceProducts = [
   { id: 'ucn-21', name: 'Unique Charm Necklace Style 21', price: 99, image: '21.jpg', extraImages: ['11.jpg', '19.jpg', '22.jpg'] },
   { id: 'ucn-22', name: 'Unique Charm Necklace Style 22', price: 99, image: '22.jpg', extraImages: ['11.jpg', '19.jpg', '21.jpg'] },
   { id: 'ucn-23', name: 'Unique Charm Necklace Style 23', price: 99, image: '23.jpg', extraImages: ['8.jpg', '6.jpg', '7.jpg', '10.jpg', '15.jpg', '25.jpg'] },
-  { id: 'ucn-24', name: 'Unique Charm Necklace Style 24', price: 59, image: '24.jpg', extraImages: ['1.jpg', '2.jpg', '16.jpg'] },
-  { id: 'ucn-25', name: 'Unique Charm Necklace Style 25', price: 99, image: '25.jpg', extraImages: ['8.jpg', '6.jpg', '7.jpg', '10.jpg', '15.jpg', '23.jpg'] },
   { id: 'ucn-26', name: 'Unique Charm Necklace Style 26', price: 55, image: '26.jpg', extraImages: ['5.jpg', '12.jpg', '17.jpg'] },
-  { id: 'ucn-27', name: 'Unique Charm Necklace Style 27', price: 39, image: '27.jpg', extraImages: ['4.jpg', '3.jpg'] },
 ].map(p => {
   const baseImages = [getImagePath(`images/products/unique-charm-necklace/${p.image}`)];
   const allImages = p.extraImages 

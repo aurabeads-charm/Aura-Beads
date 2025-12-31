@@ -1,11 +1,12 @@
 import React, { useState, useMemo } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { PRODUCTS } from '../constants';
 import { useCart } from '../context/CartContext';
 import { motion } from 'motion/react';
 
 const ProductDetail = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const { addToCart } = useCart();
   const baseProduct = PRODUCTS.find(p => p.id === id);
   const [activeImage, setActiveImage] = useState(0);
@@ -100,7 +101,14 @@ const ProductDetail = () => {
               {baseProduct.images.map((img, idx) => (
                 <button
                   key={idx}
-                  onClick={() => setActiveImage(idx)}
+                  onClick={() => {
+                    const targetProd = imageProducts[idx];
+                    if (targetProd && targetProd.id !== baseProduct.id) {
+                      navigate(`/product/${targetProd.id}`);
+                    } else {
+                      setActiveImage(idx);
+                    }
+                  }}
                   className={`flex-shrink-0 w-16 h-16 rounded-sm overflow-hidden border-2 transition-all ${
                     activeImage === idx ? 'border-amber-600 shadow-md' : 'border-transparent opacity-60'
                   }`}
