@@ -27,7 +27,7 @@ const ProductDetail = () => {
           <li><span>/</span></li>
           <li><Link to="/shop" className="hover:text-amber-600">Shop</Link></li>
           <li><span>/</span></li>
-          <li className="text-neutral-800 font-semibold truncate max-w-[150px]">{product.name}</li>
+          <li className="text-neutral-800 font-semibold">{product.name}</li>
         </ul>
       </nav>
 

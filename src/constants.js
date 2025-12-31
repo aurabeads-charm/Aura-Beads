@@ -287,42 +287,49 @@ export const koreanEarringsProducts = [
 
 // Unique Charm Necklace (27 products)
 export const uniqueCharmNecklaceProducts = [
-  { id: 'ucn-1', name: 'Unique Charm Necklace Style 1', price: 59, image: '1.jpg' },
-  { id: 'ucn-2', name: 'Unique Charm Necklace Style 2', price: 59, image: '2.jpg' },
-  { id: 'ucn-3', name: 'Unique Charm Necklace Style 3', price: 39, image: '3.jpg' },
-  { id: 'ucn-4', name: 'Unique Charm Necklace Style 4', price: 449, image: '4.jpg' },
-  { id: 'ucn-5', name: 'Unique Charm Necklace Style 5', price: 55, image: '5.jpg' },
-  { id: 'ucn-6', name: 'Unique Charm Necklace Style 6', price: 99, image: '6.jpg' },
-  { id: 'ucn-7', name: 'Unique Charm Necklace Style 7', price: 449, image: '7.jpg' },
-  { id: 'ucn-8', name: 'Unique Charm Necklace Style 8', price: 449, image: '8.jpg' },
-  { id: 'ucn-9', name: 'Unique Charm Necklace Style 9', price: 45, image: '9.jpg' },
-  { id: 'ucn-10', name: 'Unique Charm Necklace Style 10', price: 449, image: '10.jpg' },
-  { id: 'ucn-11', name: 'Unique Charm Necklace Style 11', price: 99, image: '11.jpg' },
-  { id: 'ucn-12', name: 'Unique Charm Necklace Style 12', price: 55, image: '12.jpg' },
+  { id: 'ucn-1', name: 'Unique Charm Necklace Style 1', price: 59, image: '1.jpg', extraImages: ['2.jpg', '16.jpg', '24.jpg'] },
+  { id: 'ucn-2', name: 'Unique Charm Necklace Style 2', price: 59, image: '2.jpg', extraImages: ['1.jpg', '16.jpg', '24.jpg'] },
+  { id: 'ucn-3', name: 'Unique Charm Necklace Style 3', price: 39, image: '3.jpg', extraImages: ['4.jpg', '27.jpg'] },
+  { id: 'ucn-4', name: 'Unique Charm Necklace Style 4', price: 39, image: '4.jpg', extraImages: ['3.jpg', '27.jpg'] },
+  { id: 'ucn-5', name: 'Unique Charm Necklace Style 5', price: 55, image: '5.jpg', extraImages: ['12.jpg', '17.jpg', '26.jpg'] },
+  { id: 'ucn-6', name: 'Unique Charm Necklace Style 6', price: 99, image: '6.jpg', extraImages: ['8.jpg', '7.jpg', '10.jpg', '15.jpg', '23.jpg', '25.jpg'] },
+  { id: 'ucn-7', name: 'Unique Charm Necklace Style 7', price: 99, image: '7.jpg', extraImages: ['8.jpg', '6.jpg', '10.jpg', '15.jpg', '23.jpg', '25.jpg'] },
+  { id: 'ucn-8', name: 'Unique Charm Necklace Style 8', price: 99, image: '8.jpg', extraImages: ['6.jpg', '7.jpg', '10.jpg', '15.jpg', '23.jpg', '25.jpg'] },
+  { id: 'ucn-9', name: 'Unique Charm Necklace Style 9', price: 45, image: '9.jpg', extraImages: ['14.jpg'] },
+  { id: 'ucn-10', name: 'Unique Charm Necklace Style 10', price: 99, image: '10.jpg', extraImages: ['8.jpg', '6.jpg', '7.jpg', '15.jpg', '23.jpg', '25.jpg'] },
+  { id: 'ucn-11', name: 'Unique Charm Necklace Style 11', price: 99, image: '11.jpg', extraImages: ['19.jpg', '21.jpg', '22.jpg'] },
+  { id: 'ucn-12', name: 'Unique Charm Necklace Style 12', price: 55, image: '12.jpg', extraImages: ['5.jpg', '17.jpg', '26.jpg'] },
   { id: 'ucn-13', name: 'Unique Charm Necklace Style 13', price: 449, image: '13.jpg' },
-  { id: 'ucn-14', name: 'Unique Charm Necklace Style 14', price: 449, image: '14.jpg' },
-  { id: 'ucn-15', name: 'Unique Charm Necklace Style 15', price: 449, image: '15.jpg' },
-  { id: 'ucn-16', name: 'Unique Charm Necklace Style 16', price: 449, image: '16.jpg' },
-  { id: 'ucn-17', name: 'Unique Charm Necklace Style 17', price: 55, image: '17.jpg' },
+  { id: 'ucn-14', name: 'Unique Charm Necklace Style 14', price: 45, image: '14.jpg', extraImages: ['9.jpg'] },
+  { id: 'ucn-15', name: 'Unique Charm Necklace Style 15', price: 99, image: '15.jpg', extraImages: ['8.jpg', '6.jpg', '7.jpg', '10.jpg', '23.jpg', '25.jpg'] },
+  { id: 'ucn-16', name: 'Unique Charm Necklace Style 16', price: 59, image: '16.jpg', extraImages: ['1.jpg', '2.jpg', '24.jpg'] },
+  { id: 'ucn-17', name: 'Unique Charm Necklace Style 17', price: 55, image: '17.jpg', extraImages: ['5.jpg', '12.jpg', '26.jpg'] },
   { id: 'ucn-18', name: 'Unique Charm Necklace Style 18', price: 69, image: '18.jpg' },
-  { id: 'ucn-19', name: 'Unique Charm Necklace Style 19', price: 449, image: '19.jpg' },
+  { id: 'ucn-19', name: 'Unique Charm Necklace Style 19', price: 99, image: '19.jpg', extraImages: ['11.jpg', '21.jpg', '22.jpg'] },
   { id: 'ucn-20', name: 'Unique Charm Necklace Style 20', price: 55, image: '20.jpg' },
-  { id: 'ucn-21', name: 'Unique Charm Necklace Style 21', price: 449, image: '21.jpg' },
-  { id: 'ucn-22', name: 'Unique Charm Necklace Style 22', price: 449, image: '22.jpg' },
-  { id: 'ucn-23', name: 'Unique Charm Necklace Style 23', price: 449, image: '23.jpg' },
-  { id: 'ucn-24', name: 'Unique Charm Necklace Style 24', price: 449, image: '24.jpg' },
-  { id: 'ucn-25', name: 'Unique Charm Necklace Style 25', price: 449, image: '25.jpg' },
-  { id: 'ucn-26', name: 'Unique Charm Necklace Style 26', price: 449, image: '26.jpg' },
-  { id: 'ucn-27', name: 'Unique Charm Necklace Style 27', price: 449, image: '27.jpg' },
-].map(p => ({
-  ...p,
-  category: 'Unique Charm Necklace',
-  categoryId: 'unique-charm-necklace',
-  description: 'One-of-a-kind charm necklace to express your style.',
-  longDescription: 'This unique charm necklace is designed to make a statement with carefully selected charms.',
-  images: [getImagePath(`images/products/unique-charm-necklace/${p.image}`)],
-  featured: p.id === 'ucn-1' || p.id === 'ucn-2'
-}));
+  { id: 'ucn-21', name: 'Unique Charm Necklace Style 21', price: 99, image: '21.jpg', extraImages: ['11.jpg', '19.jpg', '22.jpg'] },
+  { id: 'ucn-22', name: 'Unique Charm Necklace Style 22', price: 99, image: '22.jpg', extraImages: ['11.jpg', '19.jpg', '21.jpg'] },
+  { id: 'ucn-23', name: 'Unique Charm Necklace Style 23', price: 99, image: '23.jpg', extraImages: ['8.jpg', '6.jpg', '7.jpg', '10.jpg', '15.jpg', '25.jpg'] },
+  { id: 'ucn-24', name: 'Unique Charm Necklace Style 24', price: 59, image: '24.jpg', extraImages: ['1.jpg', '2.jpg', '16.jpg'] },
+  { id: 'ucn-25', name: 'Unique Charm Necklace Style 25', price: 99, image: '25.jpg', extraImages: ['8.jpg', '6.jpg', '7.jpg', '10.jpg', '15.jpg', '23.jpg'] },
+  { id: 'ucn-26', name: 'Unique Charm Necklace Style 26', price: 55, image: '26.jpg', extraImages: ['5.jpg', '12.jpg', '17.jpg'] },
+  { id: 'ucn-27', name: 'Unique Charm Necklace Style 27', price: 39, image: '27.jpg', extraImages: ['4.jpg', '3.jpg'] },
+].map(p => {
+  const baseImages = [getImagePath(`images/products/unique-charm-necklace/${p.image}`)];
+  const allImages = p.extraImages 
+    ? [...baseImages, ...p.extraImages.map(img => getImagePath(`images/products/unique-charm-necklace/${img}`))]
+    : baseImages;
+  
+  return {
+    ...p,
+    category: 'Unique Charm Necklace',
+    categoryId: 'unique-charm-necklace',
+    description: 'One-of-a-kind charm necklace to express your style.',
+    longDescription: 'This unique charm necklace is designed to make a statement with carefully selected charms.',
+    images: allImages,
+    featured: p.id === 'ucn-1' || p.id === 'ucn-2'
+  };
+});
 
 // Combine all product
 export const PRODUCTS = [

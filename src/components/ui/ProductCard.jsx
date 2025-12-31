@@ -24,7 +24,7 @@ const ProductCard = ({ product }) => {
       <div className="p-3 md:p-5 flex flex-col flex-grow">
         <p className="text-[8px] md:text-[10px] uppercase tracking-[0.2em] text-neutral-400 mb-1">{product.category}</p>
         <Link to={`/product/${product.id}`} className="block flex-grow">
-          <h3 className="text-sm md:text-lg font-serif text-neutral-800 group-hover:text-amber-600 transition-colors line-clamp-1">
+          <h3 className="text-sm md:text-lg font-serif text-neutral-800 group-hover:text-amber-600 transition-colors line-clamp-2">
             {product.name}
           </h3>
         </Link>
