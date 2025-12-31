@@ -169,7 +169,7 @@ export const antiTarnishRingsProducts = [
   featured: p.id === 'atr-1' || p.id === 'atr-2'
 }));
 
-// Beads Bracelet (66 products)
+// Beads Bracelet (59 products)
 export const beadsBraceletProducts = [
   { id: 'bb-1', name: 'Beads Bracelet Style 1', price: 299, image: '11.jpg' },
   { id: 'bb-2', name: 'Beads Bracelet Style 2', price: 299, image: '2.jpg' },
@@ -230,13 +230,6 @@ export const beadsBraceletProducts = [
   { id: 'bb-57', name: 'Beads Bracelet Style 57', price: 299, image: '57.jpg' },
   { id: 'bb-58', name: 'Beads Bracelet Style 58', price: 299, image: '58.jpg' },
   { id: 'bb-59', name: 'Beads Bracelet Style 59', price: 299, image: '59.jpg' },
-  { id: 'bb-60', name: 'Beads Bracelet Style 60', price: 299, image: '60.jpg' },
-  { id: 'bb-61', name: 'Beads Bracelet Style 61', price: 299, image: '61.jpg' },
-  { id: 'bb-62', name: 'Beads Bracelet Style 62', price: 299, image: '62.jpg' },
-  { id: 'bb-63', name: 'Beads Bracelet Style 63', price: 299, image: '63.jpg' },
-  { id: 'bb-64', name: 'Beads Bracelet Style 64', price: 299, image: '64.jpg' },
-  { id: 'bb-65', name: 'Beads Bracelet Style 65', price: 299, image: '65.jpg' },
-  { id: 'bb-66', name: 'Beads Bracelet Style 66', price: 299, image: '66.jpg' },
 ].map(p => ({
   ...p,
   category: 'Beads Bracelet',
