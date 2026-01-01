@@ -127,8 +127,7 @@ const Navbar = ({ onOpenCart }) => {
                 </Link>
               ))}
               <div className="pt-8 flex flex-col items-center gap-2">
-                <span className="text-[9px] uppercase tracking-widest text-neutral-400 italic">Handcrafted with Intention</span>
-                <span className="text-[10px] font-bold text-neutral-900">INR (₹)</span>
+                <span className="text-[9px] uppercase tracking-widest text-neutral-400 italic">Handcrafted with Pure Love <span className="text-amber-500">♥</span></span>
               </div>
             </div>
           </motion.div>

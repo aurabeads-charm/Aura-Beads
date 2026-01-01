@@ -30,20 +30,20 @@ const Toast = ({ show, message, productName, onClose }) => {
   if (!show) return null;
   
   return (
-    <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] animate-slide-up">
-      <div className="bg-neutral-900 text-white px-6 py-4 rounded-2xl shadow-2xl flex items-center gap-3 min-w-[280px]">
+    <div className="fixed bottom-6 left-4 right-4 md:left-1/2 md:right-auto md:-translate-x-1/2 z-[100] animate-slide-up-mobile md:animate-slide-up">
+      <div className="bg-neutral-900 text-white px-4 py-3 md:px-6 md:py-4 rounded-2xl shadow-2xl flex items-center gap-3 md:min-w-[280px]">
         <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
           <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <div className="flex-1">
+        <div className="flex-1 min-w-0">
           <p className="font-semibold text-sm">{message}</p>
-          {productName && <p className="text-neutral-400 text-xs mt-0.5 truncate max-w-[200px]">{productName}</p>}
+          {productName && <p className="text-neutral-400 text-xs mt-0.5 truncate">{productName}</p>}
         </div>
         <button 
           onClick={onClose}
-          className="text-neutral-400 hover:text-white transition-colors ml-2"
+          className="text-neutral-400 hover:text-white transition-colors ml-2 flex-shrink-0"
         >
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -55,7 +55,12 @@ const Toast = ({ show, message, productName, onClose }) => {
           from { opacity: 0; transform: translate(-50%, 20px); }
           to { opacity: 1; transform: translate(-50%, 0); }
         }
+        @keyframes slide-up-mobile {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
         .animate-slide-up { animation: slide-up 0.3s ease-out forwards; }
+        .animate-slide-up-mobile { animation: slide-up-mobile 0.3s ease-out forwards; }
       `}</style>
     </div>
   );
