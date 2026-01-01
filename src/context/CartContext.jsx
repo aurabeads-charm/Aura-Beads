@@ -14,11 +14,30 @@ const getStoredCart = () => {
 
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState(() => getStoredCart());
+  const [toast, setToast] = useState({ show: false, message: '', productName: '' });
 
   // Save cart to localStorage whenever it changes
   useEffect(() => {
     localStorage.setItem('aurabeads_cart', JSON.stringify(cart));
   }, [cart]);
+
+  // Auto-hide toast after 3 seconds
+  useEffect(() => {
+    if (toast.show) {
+      const timer = setTimeout(() => {
+        setToast({ show: false, message: '', productName: '' });
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [toast.show]);
+
+  const showToast = useCallback((message, productName = '') => {
+    setToast({ show: true, message, productName });
+  }, []);
+
+  const hideToast = useCallback(() => {
+    setToast({ show: false, message: '', productName: '' });
+  }, []);
 
   const addToCart = useCallback((product) => {
     setCart(prev => {
@@ -30,7 +49,9 @@ export const CartProvider = ({ children }) => {
       }
       return [...prev, { ...product, quantity: 1 }];
     });
-  }, []);
+    // Show toast notification
+    showToast('Added to bag!', product.name);
+  }, [showToast]);
 
   const removeFromCart = useCallback((productId) => {
     setCart(prev => prev.filter(item => item.id !== productId));
@@ -59,7 +80,9 @@ export const CartProvider = ({ children }) => {
       updateQuantity,
       clearCart,
       totalItems,
-      totalPrice
+      totalPrice,
+      toast,
+      hideToast
     }}>
       {children}
     </CartContext.Provider>

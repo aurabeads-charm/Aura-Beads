@@ -48,8 +48,8 @@ const Shop = () => {
         </p>
       </header>
 
-      {/* Filter Tabs - Horizontal Scroll on Mobile */}
-      <div className="flex overflow-x-auto pb-6 md:pb-0 md:flex-wrap md:justify-center gap-2 md:gap-4 mb-8 md:mb-12 no-scrollbar">
+      {/* Filter Tabs - Stacked on Mobile, Horizontal on Desktop */}
+      <div className="flex flex-col items-center md:flex-row md:flex-wrap md:justify-center gap-2 md:gap-4 mb-8 md:mb-12">
         <button
           onClick={() => handleCategoryChange('All')}
           className={`whitespace-nowrap px-6 py-2 rounded-full text-[10px] md:text-xs uppercase tracking-widest font-bold transition-all duration-300 ${

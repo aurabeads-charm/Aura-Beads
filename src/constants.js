@@ -81,10 +81,10 @@ export const antiTarnishBraceletProducts = [
 // Anti Tarnish Earrings (5 products - consolidated styles as variations)
 export const antiTarnishEarringsProducts = [
   { id: 'ate-1', name: 'Anti Tarnish Earrings Style 1', price: 99, image: '1.jpg', extraImages: ['2.jpg', '12.jpg'] },
-  { id: 'ate-2', name: 'Anti Tarnish Earrings Style 2', price: 99, image: '3.jpg', extraImages: ['9.jpg', '13.jpg'] },
-  { id: 'ate-3', name: 'Anti Tarnish Earrings Style 3', price: 99, image: '4.jpg', extraImages: ['8.jpg', '14.jpg'] },
-  { id: 'ate-4', name: 'Anti Tarnish Earrings Style 4', price: 99, image: '5.jpg', extraImages: ['6.jpg', '11.jpg'] },
-  { id: 'ate-5', name: 'Anti Tarnish Earrings Style 5', price: 99, image: '7.jpg', extraImages: ['10.jpg', '15.jpg'] },
+  { id: 'ate-2', name: 'Anti Tarnish Earrings Style 2', price: 65, image: '3.jpg', extraImages: ['9.jpg', '13.jpg'] },
+  { id: 'ate-3', name: 'Anti Tarnish Earrings Style 3', price: 65, image: '4.jpg', extraImages: ['8.jpg', '14.jpg'] },
+  { id: 'ate-4', name: 'Anti Tarnish Earrings Style 4', price: 65, image: '5.jpg', extraImages: ['6.jpg', '11.jpg'] },
+  { id: 'ate-5', name: 'Anti Tarnish Earrings Style 5', price: 65, image: '7.jpg', extraImages: ['10.jpg', '15.jpg'] },
 ].map(p => {
   const baseImages = [getImagePath(`images/products/anti-tarnish-earrings/${p.image}`)];
   const allImages = p.extraImages 
@@ -155,25 +155,25 @@ export const antiTarnishRingsProducts = [
 // Beads Bracelet (20 products - consolidated styles as variations)
 export const beadsBraceletProducts = [
   { id: 'bb-1', name: 'Beads Bracelet Style 1', price: 65, image: '11.jpg', extraImages: ['12.jpg', '13.jpg'] },
-  { id: 'bb-2', name: 'Beads Bracelet Style 2', price: 299, image: '4.jpg', extraImages: ['3.jpg','2.jpg'] },
+  { id: 'bb-2', name: 'Beads Bracelet Style 2', price: 70, image: '4.jpg', extraImages: ['3.jpg','2.jpg'] },
   { id: 'bb-3', name: 'Beads Bracelet Style 3', price: 99, image: '5.jpg', extraImages: ['6.jpg','7.jpg'] },
-  { id: 'bb-4', name: 'Beads Bracelet Style 4', price: 299, image: '9.jpg', extraImages: ['10.jpg','8.jpg'] },
-  { id: 'bb-5', name: 'Beads Bracelet Style 5', price: 299, image: '16.jpg', extraImages: ['14.jpg','15.jpg'] },
+  { id: 'bb-4', name: 'Beads Bracelet Style 4', price: 65, image: '9.jpg', extraImages: ['10.jpg','8.jpg'] },
+  { id: 'bb-5', name: 'Beads Bracelet Style 5', price: 65, image: '16.jpg', extraImages: ['14.jpg','15.jpg'] },
   { id: 'bb-6', name: 'Beads Bracelet Style 6', price: 99, image: '17.jpg' },
   { id: 'bb-7', name: 'Beads Bracelet Style 7', price: 99, image: '18.jpg', extraImages: ['19.jpg','20.jpg'] },
   { id: 'bb-8', name: 'Beads Bracelet Style 8', price: 65, image: '21.jpg', extraImages: ['22.jpg','23.jpg'] },
-  { id: 'bb-9', name: 'Beads Bracelet Style 9', price: 299, image: '26.jpg', extraImages: ['24.jpg','25.jpg'] },
+  { id: 'bb-9', name: 'Beads Bracelet Style 9', price: 65, image: '26.jpg', extraImages: ['24.jpg','25.jpg'] },
   { id: 'bb-10', name: 'Beads Bracelet Style 10', price: 99, image: '27.jpg', extraImages: ['28.jpg'] },
-  { id: 'bb-11', name: 'Beads Bracelet Style 11', price: 299, image: '31.jpg', extraImages: ['32.jpg','30.jpg','29.jpg'] },
-  { id: 'bb-12', name: 'Beads Bracelet Style 12', price: 299, image: '33.jpg', extraImages: ['35.jpg','34.jpg'] },
-  { id: 'bb-13', name: 'Beads Bracelet Style 13', price: 299, image: '37.jpg', extraImages: ['38.jpg','36.jpg'] },
+  { id: 'bb-11', name: 'Beads Bracelet Style 11', price: 70, image: '31.jpg', extraImages: ['32.jpg','30.jpg','29.jpg'] },
+  { id: 'bb-12', name: 'Beads Bracelet Style 12', price: 65, image: '33.jpg', extraImages: ['35.jpg','34.jpg'] },
+  { id: 'bb-13', name: 'Beads Bracelet Style 13', price: 65, image: '37.jpg', extraImages: ['38.jpg','36.jpg'] },
   { id: 'bb-14', name: 'Beads Bracelet Style 14', price: 70, image: '39.jpg', extraImages: ['40.jpg','41.jpg'] },
   { id: 'bb-15', name: 'Beads Bracelet Style 15', price: 99, image: '42.jpg', extraImages: ['43.jpg','44.jpg'] },
   { id: 'bb-16', name: 'Beads Bracelet Style 16', price: 39, image: '45.jpg', extraImages: ['46.jpg','47.jpg'] },
-  { id: 'bb-17', name: 'Beads Bracelet Style 17', price: 299, image: '50.jpg', extraImages: ['48.jpg','49.jpg'] },
+  { id: 'bb-17', name: 'Beads Bracelet Style 17', price: 75, image: '50.jpg', extraImages: ['48.jpg','49.jpg'] },
   { id: 'bb-18', name: 'Beads Bracelet Style 18', price: 99, image: '51.jpg', extraImages: ['52.jpg','53.jpg'] },
   { id: 'bb-19', name: 'Beads Bracelet Style 19', price: 99, image: '54.jpg', extraImages: ['56.jpg','55.jpg'] },
-  { id: 'bb-20', name: 'Beads Bracelet Style 20', price: 299, image: '58.jpg', extraImages: ['59.jpg','57.jpg'] },
+  { id: 'bb-20', name: 'Beads Bracelet Style 20', price: 75, image: '58.jpg', extraImages: ['59.jpg','57.jpg'] },
 ].map(p => {
   const baseImages = [getImagePath(`images/products/beads-bracelet/${p.image}`)];
   const allImages = p.extraImages 
