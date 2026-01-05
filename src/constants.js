@@ -277,6 +277,6 @@ export const getFeaturedProducts = () => {
 
 export const CONTACT_INFO = {
   whatsapp: '916374950502',
-  email: 'harini3054@gmail.com',
+  email: 'aurabeads.charm@gmail.com',
   instagram: '@aurabeads_.charm'
 };
