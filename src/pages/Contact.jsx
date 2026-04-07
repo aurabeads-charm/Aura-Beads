@@ -147,7 +147,7 @@ const Contact = () => {
                 value={formData.name}
                 onChange={handleChange}
                 className={`w-full px-4 py-3 bg-neutral-50 border ${errors.name ? 'border-red-400' : 'border-neutral-100'} focus:border-amber-600 focus:outline-none transition-colors`} 
-                placeholder="e.g. Elena Smith" 
+                placeholder="e.g.Aura Beads Charm" 
               />
               {errors.name && (
                 <p className="mt-1 text-red-500 text-xs">{errors.name}</p>
@@ -163,7 +163,7 @@ const Contact = () => {
                 value={formData.email}
                 onChange={handleChange}
                 className={`w-full px-4 py-3 bg-neutral-50 border ${errors.email ? 'border-red-400' : 'border-neutral-100'} focus:border-amber-600 focus:outline-none transition-colors`} 
-                placeholder="elena@example.com" 
+                placeholder="aura@example.com" 
               />
               {errors.email && (
                 <p className="mt-1 text-red-500 text-xs">{errors.email}</p>
