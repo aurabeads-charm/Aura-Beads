@@ -130,11 +130,21 @@ export const antiTarnishNecklaceProducts = [
 
 // Anti Tarnish Rings (5 products - consolidated styles as variations)
 export const antiTarnishRingsProducts = [
-  { id: 'atr-1', name: 'Anti Tarnish Ring Style 1', price: 99, image: '1.jpg', extraImages: ['2.jpg', '3.jpg'] },
-  { id: 'atr-2', name: 'Anti Tarnish Ring Style 2', price: 99, image: '4.jpg', extraImages: ['5.jpg'] },
-  { id: 'atr-3', name: 'Anti Tarnish Ring Style 3', price: 99, image: '6.jpg', extraImages: ['7.jpg', '8.jpg'] },
-  { id: 'atr-4', name: 'Anti Tarnish Ring Style 4', price: 99, image: '9.jpg', extraImages: ['10.jpg', '11.jpg'] },
-  { id: 'atr-5', name: 'Anti Tarnish Ring Style 5', price: 99, image: '12.jpg', extraImages: ['13.jpg', '14.jpg'] },
+  { id: 'atr-1', name: 'Anti Tarnish Ring Style 1', price: 99, image: '1.jpg' },
+  { id: 'atr-2', name: 'Anti Tarnish Ring Style 2', price: 99, image: '2.jpg'},
+  { id: 'atr-3', name: 'Anti Tarnish Ring Style 3', price: 99, image: '3.jpg' },
+  { id: 'atr-4', name: 'Anti Tarnish Ring Style 4', price: 99, image: '4.jpg' },
+  { id: 'atr-5', name: 'Anti Tarnish Ring Style 5', price: 99, image: '5.jpg' },
+  { id: 'atr-6', name: 'Anti Tarnish Ring Style 6', price: 99, image: '6.jpg' },
+  { id: 'atr-7', name: 'Anti Tarnish Ring Style 7', price: 105, image: '7.jpg' },
+  { id: 'atr-8', name: 'Anti Tarnish Ring Style 8', price: 105, image: '8.jpg' },
+  { id: 'atr-9', name: 'Anti Tarnish Ring Style 9', price: 115, image: '9.jpg' },
+  { id: 'atr-10', name: 'Anti Tarnish Ring Style 10', price: 115, image: '10.jpg' },
+  { id: 'atr-11', name: 'Anti Tarnish Ring Style 11', price: 115, image: '11.jpg' },
+  { id: 'atr-12', name: 'Anti Tarnish Ring Style 12', price: 129, image: '12.jpg' },
+  { id: 'atr-13', name: 'Anti Tarnish Ring Style 13', price: 149, image: '13.jpg' },
+  { id: 'atr-14', name: 'Anti Tarnish Ring Style 14', price: 149, image: '14.jpg' },
+  { id: 'atr-15', name: 'Anti Tarnish Ring Style 15', price: 149, image: '15.jpg' },
 ].map(p => {
   const baseImages = [getImagePath(`images/products/anti-tarnish-rings/${p.image}`)];
   const allImages = p.extraImages 

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Light background -->
+  <circle cx="50" cy="50" r="48" fill="#ffffff"></circle>
+
+  <!-- Gold ring -->
+  <circle cx="50" cy="50" r="42" fill="none" stroke="#D4AF37" stroke-width="4"></circle>
+
+  <!-- Letter A -->
+  <text x="50" y="60" font-size="48" text-anchor="middle" fill="#000000" font-family="Georgia, serif" font-style="italic">
+    A
+  </text>
+
+  <!-- Sparkle -->
+  <polygon points="72,20 75,28 83,28 77,34 80,42 72,37 64,42 67,34 61,28 69,28" fill="#D4AF37"></polygon>
+</svg>
