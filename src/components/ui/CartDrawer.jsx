@@ -16,8 +16,7 @@ const CartDrawer = ({ isOpen, onClose }) => {
       return `✨ *${item.name}*%0A` +
              `Price: ₹${itemPriceFormatted}%0A` +
              `Quantity: ${item.quantity}%0A` +
-             `Subtotal: ₹${subtotalFormatted}%0A` +
-             `Image Ref: ${item.images[0]}`;
+             `Subtotal: ₹${subtotalFormatted}%0A` ;
     }).join('%0A%0A──────────────%0A%0A');
 
     const grandTotalText = `*GRAND TOTAL: ₹${totalPrice.toLocaleString('en-IN')}*`;
