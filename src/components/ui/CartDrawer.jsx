@@ -5,29 +5,35 @@ import { CONTACT_INFO } from '../../constants';
 const CartDrawer = ({ isOpen, onClose }) => {
   const { cart, removeFromCart, updateQuantity, totalPrice } = useCart();
 
-  const handleWhatsAppCheckout = () => {
-    if (cart.length === 0) return;
+ const handleWhatsAppCheckout = () => {
+  if (cart.length === 0) return;
 
-    // Constructing a rich, formatted message for the artisan
-    const itemsText = cart.map(item => {
-      const itemPriceFormatted = item.price.toLocaleString('en-IN');
-      const subtotalFormatted = (item.price * item.quantity).toLocaleString('en-IN');
-      
-      return `✨ *${item.name}*%0A` +
-             `Price: ₹${itemPriceFormatted}%0A` +
-             `Quantity: ${item.quantity}%0A` +
-             `Subtotal: ₹${subtotalFormatted}%0A` ;
-    }).join('%0A%0A──────────────%0A%0A');
+  const SHIPPING_CHARGE = 120;
 
-    const grandTotalText = `*GRAND TOTAL: ₹${totalPrice.toLocaleString('en-IN')}*`;
+  // Constructing a rich, formatted message for the artisan
+  const itemsText = cart.map(item => {
+    const itemPriceFormatted = item.price.toLocaleString('en-IN');
+    const subtotalFormatted = (item.price * item.quantity).toLocaleString('en-IN');
     
-    const header = `💎 *NEW ORDER - AURABEADS CHARM*%0A%0A`;
-    const footer = `%0A%0A──────────────%0A%0APlease let me know the payment details to confirm my order. Thank you!`;
-    
-    const fullMessage = `${header}${itemsText}%0A%0A${grandTotalText}${footer}`;
-    
-    window.open(`https://wa.me/${CONTACT_INFO.whatsapp}?text=${fullMessage}`, '_blank');
-  };
+    return `*${item.name}*%0A` +
+           `Price: ₹${itemPriceFormatted}%0A` +
+           `Quantity: ${item.quantity}%0A` +
+           `Subtotal: ₹${subtotalFormatted}%0A`;
+  }).join('%0A%0A──────────────%0A%0A');
+
+  // Add shipping to total
+  const finalTotal = totalPrice + SHIPPING_CHARGE;
+
+  const shippingText = `Shipping Charges: ₹${SHIPPING_CHARGE.toLocaleString('en-IN')}%0A`;
+  const grandTotalText = `*GRAND TOTAL: ₹${finalTotal.toLocaleString('en-IN')}*`;
+
+  const header = `*NEW ORDER - AURABEADS CHARM*%0A%0A`;
+  const footer = `%0A%0A──────────────%0A%0APlease let me know the payment details to confirm my order. Thank you!`;
+
+  const fullMessage = `${header}${itemsText}%0A%0A${shippingText}${grandTotalText}${footer}`;
+
+  window.open(`https://wa.me/${CONTACT_INFO.whatsapp}?text=${fullMessage}`, '_blank');
+};
 
   if (!isOpen) return null;
 
