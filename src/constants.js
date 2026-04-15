@@ -84,7 +84,7 @@ export const antiTarnishBraceletProducts = [
   { id: 'atb-22', name: 'Anti Tarnish Bracelet - Style 23', price: 159, image: '22.jpg' },
 
   { id: 'atb-23', name: 'Anti Tarnish Bracelet - Style 24', price: 199, image: '23.jpg' },
-  { id: 'atb-24', name: 'Anti Tarnish Bracelet - Style 25', price: 199, image: '24.jpg' },
+  { id: 'atb-24', name: 'Anti Tarnish Bracelet - Style 25', price: 199, image: '24.jpeg' },
   { id: 'atb-25', name: 'Anti Tarnish Bracelet - Style 26', price: 199, image: '25.jpg' },
   { id: 'atb-26', name: 'Anti Tarnish Bracelet - Style 27', price: 199, image: '26.jpg' },
   { id: 'atb-27', name: 'Anti Tarnish Bracelet - Style 28', price: 199, image: '27.jpg' },
@@ -163,7 +163,7 @@ export const antiTarnishNecklaceProducts = [
   { id: 'atn-13', name: 'Anti Tarnish Necklace Style 13', price: 199, image: '9.jpg' },
   { id: 'atn-14', name: 'Anti Tarnish Necklace Style 14', price: 199, image: '11.jpg' },
   { id: 'atn-15', name: 'Anti Tarnish Necklace Style 15', price: 199, image: '12.jpg' },
-  { id: 'atn-16', name: 'Anti Tarnish Necklace Style 16', price: 199, image: '14.jpg' },
+  { id: 'atn-16', name: 'Anti Tarnish Necklace Style 16', price: 199, image: '14.jpeg' },
   { id: 'atn-17', name: 'Anti Tarnish Necklace Style 17', price: 199, image: '15.jpg' },
   { id: 'atn-18', name: 'Anti Tarnish Necklace Style 18', price: 199, image: '16.jpg' },
   { id: 'atn-19', name: 'Anti Tarnish Necklace Style 19', price: 199, image: '13.jpg', extraImages: ['17.jpg'] },
@@ -185,10 +185,10 @@ export const antiTarnishNecklaceProducts = [
   { id: 'atn-31', name: 'Anti Tarnish Necklace Style 31', price: 249, image: '29.jpg' },
 
   // ₹359 (32–36)
-  { id: 'atn-32', name: 'Anti Tarnish Necklace Style 32', price: 359, image: '30.jpg' },
-  { id: 'atn-33', name: 'Anti Tarnish Necklace Style 33', price: 359, image: '31.jpg' },
-  { id: 'atn-34', name: 'Anti Tarnish Necklace Style 34', price: 359, image: '32.jpg' },
-  { id: 'atn-35', name: 'Anti Tarnish Necklace Style 35', price: 359, image: '33.jpg' },
+  { id: 'atn-32', name: 'Anti Tarnish Necklace Style 32', price: 359, image: '30.jpeg' },
+  { id: 'atn-33', name: 'Anti Tarnish Necklace Style 33', price: 359, image: '31.jpeg' },
+  { id: 'atn-34', name: 'Anti Tarnish Necklace Style 34', price: 359, image: '32.jpeg' },
+  { id: 'atn-35', name: 'Anti Tarnish Necklace Style 35', price: 359, image: '33.jpeg' },
   { id: 'atn-36', name: 'Anti Tarnish Necklace Style 36', price: 359, image: '34.jpg' },
 ].map(p => {
   const baseImages = [getImagePath(`images/products/anti-tarnish-necklace/${p.image}`)];
