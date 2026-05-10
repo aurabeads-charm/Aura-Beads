@@ -40,7 +40,7 @@ export const CATEGORIES = [
     id: 'korean-earrings',
     name: 'Korean Earrings',
     description: 'Trendy Korean-style earrings for a modern look',
-    image: getImagePath('images/products/korean-earrings/1.jpg')
+    image: getImagePath('images/products/korean-earrings/76.jpeg')
   },
   {
     id: 'unique-charm-necklace',
@@ -211,6 +211,32 @@ export const antiTarnishNecklaceProducts = [
   { id: 'atn-34', name: 'Anti Tarnish Necklace Style 34', price: 359, image: '32.jpeg' },
   { id: 'atn-35', name: 'Anti Tarnish Necklace Style 35', price: 359, image: '33.jpeg' },
   { id: 'atn-36', name: 'Anti Tarnish Necklace Style 36', price: 359, image: '34.jpg' },
+  { id: 'atn-37', name: 'Anti Tarnish Necklace Style 37', price: 389, image: '43.jpg' },
+  { id: 'atn-38', name: 'Anti Tarnish Necklace Style 38', price: 389, image: '44.jpg' },
+  { id: 'atn-39', name: 'Anti Tarnish Necklace Style 39', price: 389, image: '45.jpg' },
+  { id: 'atn-40', name: 'Anti Tarnish Necklace Style 40', price: 389, image: '46.jpg' },
+  { id: 'atn-41', name: 'Anti Tarnish Necklace Style 41', price: 389, image: '47.jpg' },
+  { id: 'atn-42', name: 'Anti Tarnish Necklace Style 42', price: 259, image: '48.jpg' },
+  { id: 'atn-43', name: 'Anti Tarnish Necklace Style 43', price: 259, image: '49.jpg' },
+  { id: 'atn-44', name: 'Anti Tarnish Necklace Style 44', price: 259, image: '50.jpg' },
+  { id: 'atn-45', name: 'Anti Tarnish Necklace Style 45', price: 259, image: '51.jpg' },
+  { id: 'atn-46', name: 'Anti Tarnish Necklace Style 46', price: 299, image: '52.jpg' },
+  { id: 'atn-47', name: 'Anti Tarnish Necklace Style 47', price: 333, image: '53.jpg' },
+  { id: 'atn-48', name: 'Anti Tarnish Necklace Style 48', price: 333, image: '54.jpg' },
+  { id: 'atn-49', name: 'Anti Tarnish Necklace Style 49', price: 345, image: '55.jpg' },
+  { id: 'atn-50', name: 'Anti Tarnish Necklace Style 50', price: 345, image: '56.jpg' },
+  { id: 'atn-51', name: 'Anti Tarnish Necklace Style 51', price: 345, image: '57.jpg' },
+  { id: 'atn-52', name: 'Anti Tarnish Necklace Style 52', price: 345, image: '58.jpg' },
+  { id: 'atn-53', name: 'Anti Tarnish Necklace Style 53', price: 345, image: '59.jpg' },
+  { id: 'atn-54', name: 'Anti Tarnish Necklace Style 54', price: 399, image: '60.jpg' },
+  { id: 'atn-55', name: 'Anti Tarnish Necklace Style 55', price: 399, image: '61.jpg' },
+  { id: 'atn-56', name: 'Anti Tarnish Necklace Style 56', price: 399, image: '62.jpg' },
+  { id: 'atn-57', name: 'Anti Tarnish Necklace Style 57', price: 449, image: '63.jpg' },
+  { id: 'atn-58', name: 'Anti Tarnish Necklace Style 58', price: 449, image: '64.jpg' },
+  { id: 'atn-59', name: 'Anti Tarnish Necklace Style 59', price: 459, image: '65.jpg' },
+  { id: 'atn-60', name: 'Anti Tarnish Necklace Style 60', price: 459, image: '66.jpg' },
+  { id: 'atn-61', name: 'Anti Tarnish Necklace Style 61', price: 499, image: '67.jpg' },
+  { id: 'atn-62', name: 'Anti Tarnish Necklace Style 62', price: 499, image: '68.jpg' },
 ].map(p => {
   const baseImages = [getImagePath(`images/products/anti-tarnish-necklace/${p.image}`)];
   const allImages = p.extraImages 
@@ -301,8 +327,8 @@ export const beadsBraceletProducts = [
 
 // Korean Earrings (14 products - consolidated styles as variations)
 export const koreanEarringsProducts = [
-  { id: 'ke-1', name: 'Korean Earrings Style 1', price: 29, image: '44.jpeg' },
-  { id: 'ke-2', name: 'Korean Earrings Style 2', price: 29, image: '65.jpg' },
+  { id: 'ke-1', name: 'Korean Earrings Style 1', price: 29, image: '65.jpg' },
+  { id: 'ke-2', name: 'Korean Earrings Style 2', price: 29, image: '44.jpeg' },
   { id: 'ke-3', name: 'Korean Earrings Style 3', price: 29, image: '66.jpeg' },
   { id: 'ke-4', name: 'Korean Earrings Style 4', price: 29, image: '37.jpg' },
   { id: 'ke-5', name: 'Korean Earrings Style 5', price: 29, image: '34.jpg' },
