@@ -12,7 +12,7 @@ const CATEGORIES = [
   'Anti Tarnish Rings',
   'Beads Bracelet',
   'Korean Earrings',
-  'Unique Charm Necklace'
+  'Kada Bracelet'
 ];
 
 const Shop = () => {

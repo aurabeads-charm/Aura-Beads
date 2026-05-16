@@ -43,10 +43,10 @@ export const CATEGORIES = [
     image: getImagePath('images/products/korean-earrings/76.jpeg')
   },
   {
-    id: 'unique-charm-necklace',
-    name: 'Unique Charm Necklace',
-    description: 'One-of-a-kind charm necklaces to express your style',
-    image: getImagePath('images/products/unique-charm-necklace/1.jpg')
+    id: 'kada-bracelet',
+    name: 'Kada Bracelet',
+    description: 'Elegant Kada bracelets crafted with exquisite designs.',
+    image: getImagePath('images/products/kada-bracelet/1.jpg')
   }
 ];
 
@@ -415,33 +415,40 @@ export const koreanEarringsProducts = [
   };
 });
 
-// Unique Charm Necklace (11 products - consolidated styles as variations)
-export const uniqueCharmNecklaceProducts = [
-  { id: 'ucn-1', name: 'Unique Charm Necklace Style 1', price: 59, image: '1.jpg', extraImages: ['2.jpg', '16.jpg', '24.jpg'] },
-  { id: 'ucn-2', name: 'Unique Charm Necklace Style 2', price: 39, image: '3.jpg', extraImages: ['4.jpg', '27.jpg'] },
-  { id: 'ucn-3', name: 'Unique Charm Necklace Style 3', price: 55, image: '5.jpg', extraImages: ['26.jpg'] },
-  { id: 'ucn-4', name: 'Unique Charm Necklace Style 4', price: 99, image: '6.jpg', extraImages: ['13.jpg','25.jpg'] },
-  { id: 'ucn-5', name: 'Unique Charm Necklace Style 5', price: 99, image: '8.jpg', extraImages: ['7.jpg','10.jpg','15.jpg','23.jpg'] },
-  { id: 'ucn-6', name: 'Unique Charm Necklace Style 6', price: 45, image: '9.jpg', extraImages: ['14.jpg'] },
-  { id: 'ucn-7', name: 'Unique Charm Necklace Style 7', price: 99, image: '11.jpg' },
-  { id: 'ucn-8', name: 'Unique Charm Necklace Style 8', price: 55, image: '12.jpg' },
-  { id: 'ucn-9', name: 'Unique Charm Necklace Style 9', price: 69, image: '18.jpg' },
-  { id: 'ucn-10', name: 'Unique Charm Necklace Style 10', price: 99, image: '19.jpg', extraImages: ['21.jpg','22.jpg'] },
-  { id: 'ucn-11', name: 'Unique Charm Necklace Style 11', price: 55, image: '20.jpg' },
+// Kada Bracelet (11 products - consolidated styles as variations)
+export const kadaBraceletProducts = [
+  { id: 'kb-1', name: 'Kada Bracelet Style 1', price: 229, image: '1.jpg' },
+  { id: 'kb-2', name: 'Kada Bracelet Style 2', price: 299, image: '2.jpg' },
+  { id: 'kb-3', name: 'Kada Bracelet Style 3', price: 229, image: '3.jpg' },
+  { id: 'kb-4', name: 'Kada Bracelet Style 4', price: 229, image: '4.jpg' },
+  { id: 'kb-5', name: 'Kada Bracelet Style 5', price: 275, image: '5.jpg' },
+  { id: 'kb-6', name: 'Kada Bracelet Style 6', price: 275, image: '6.jpg' },
+  { id: 'kb-7', name: 'Kada Bracelet Style 7', price: 275, image: '7.jpg' },
+  { id: 'kb-8', name: 'Kada Bracelet Style 8', price: 275, image: '8.jpg' },
+  { id: 'kb-9', name: 'Kada Bracelet Style 9', price: 275, image: '9.jpg' },
+  { id: 'kb-10', name: 'Kada Bracelet Style 10', price: 275, image: '10.jpg' },
+  { id: 'kb-11', name: 'Kada Bracelet Style 11', price: 275, image: '11.jpg' },
+  { id: 'kb-12', name: 'Kada Bracelet Style 12', price: 275, image: '12.jpg' },
+  { id: 'kb-13', name: 'Kada Bracelet Style 13', price: 275, image: '13.jpg' },
+  { id: 'kb-15', name: 'Kada Bracelet Style 15', price: 369, image: '15.jpg' },
+  { id: 'kb-16', name: 'Kada Bracelet Style 16', price: 369, image: '16.jpg' },
+  { id: 'kb-17', name: 'Kada Bracelet Style 17', price: 369, image: '17.jpg' },
+  { id: 'kb-18', name: 'Kada Bracelet Style 18', price: 369, image: '18.jpg' },
+  { id: 'kb-19', name: 'Kada Bracelet Style 19', price: 369, image: '19.jpg' },
 ].map(p => {
-  const baseImages = [getImagePath(`images/products/unique-charm-necklace/${p.image}`)];
+  const baseImages = [getImagePath(`images/products/kada-bracelet/${p.image}`)];
   const allImages = p.extraImages 
-    ? [...baseImages, ...p.extraImages.map(img => getImagePath(`images/products/unique-charm-necklace/${img}`))]
+    ? [...baseImages, ...p.extraImages.map(img => getImagePath(`images/products/kada-bracelet/${img}`))]
     : baseImages;
   
   return {
     ...p,
-    category: 'Unique Charm Necklace',
-    categoryId: 'unique-charm-necklace',
-    description: 'One-of-a-kind charm necklace to express your style.',
-    longDescription: 'This unique charm necklace is designed to make a statement with carefully selected charms.',
+    category: 'Kada Bracelet',
+    categoryId: 'kada-bracelet',
+    description: 'Elegant Kada bracelet crafted with exquisite design.',
+    longDescription: 'This elegant Kada bracelet is crafted with premium materials and intricate designs, perfect for any occasion.',
     images: allImages,
-    featured: p.id === 'ucn-1' || p.id === 'ucn-2'
+    featured: p.id === 'kb-1' || p.id === 'kb-2'
   };
 });
 
@@ -453,7 +460,7 @@ export const PRODUCTS = [
   ...antiTarnishRingsProducts,
   ...beadsBraceletProducts,
   ...koreanEarringsProducts,
-  ...uniqueCharmNecklaceProducts
+  ...kadaBraceletProducts
 ];
 
 // Get products by category
